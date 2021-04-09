@@ -1,0 +1,20 @@
+---
+title: Kiosk
+layout: ./app/menu.ejs
+engine: ejs
+<!-- current: index -->
+---
+
+<div id="top-10">
+    <el-main>
+        <el-divider content-position="center" class="pageTitle">
+            <h1>熱銷排行TOP10</h1>
+            <span>流行趨勢及熱銷飲品</span>
+        </el-divider>
+        <ul class="infinite-list" v-infinite-scroll="load" style="overflow:auto">
+            <li v-for="(i, index) in tea" class="infinite-list-item" v-if="index < dispalay">
+                {{ i.name }}
+            </li>
+        </ul>
+    </el-main>
+</div>
