@@ -9,4 +9,8 @@
 ## 支援的監聽
 
 目前支援 HTML、ejs、JavaScript、Images、SCSS 監聽並自動重新刷新。
+<<<<<<< HEAD
 圖片新增時也會自動刷新。
+=======
+圖片新增時也會自動刷新。
+>>>>>>> a274a3ddbc02fb858b10ed0879d99356fcf39d1c
