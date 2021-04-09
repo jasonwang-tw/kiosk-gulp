@@ -1,6 +1,13 @@
+
 <%- include('header') %>
-  <%- include('./component/banner') %>
-    <%- include('./component/topMenu') %>
-      <%- include('./component/search') %>
-        <%- contents %>
-          <%- include('footer') %>
+
+  <body>
+    <%- include('./component/banner') %>
+      <%- include('./component/topMenu') %>
+        <%- include('./component/search') %>
+          <div class="main">
+            <%- contents %>
+          </div>
+  </body>
+  <%- include('footer') %>
+

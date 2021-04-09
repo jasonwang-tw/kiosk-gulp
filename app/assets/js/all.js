@@ -40,80 +40,102 @@ new Vue({
     dispalay: 2,
     tea: [
       {
-        name: 'tea1'
+        img: '../assets/images/drinkImg.jpg',
+        name: '古道茶鄉',
+        price: 60,
+        rating: 4.7,
+        sell: 887
       },
       {
-        name: 'tea1'
+        img: '../assets/images/drinkImg.jpg',
+        name: '古道茶鄉',
+        price: 60,
+        rating: 4.7,
+        sell: 887
       },
       {
-        name: 'tea1'
+        img: '../assets/images/drinkImg.jpg',
+        name: '古道茶鄉',
+        price: 60,
+        rating: 4.7,
+        sell: 887
       },
       {
-        name: 'tea1'
+        img: '../assets/images/drinkImg.jpg',
+        name: '古道茶鄉',
+        price: 60,
+        rating: 4.7,
+        sell: 887
       },
       {
-        name: 'tea1'
+        img: '../assets/images/drinkImg.jpg',
+        name: '古道茶鄉',
+        price: 60,
+        rating: 4.7,
+        sell: 887
       },
       {
-        name: 'tea1'
+        img: '../assets/images/drinkImg.jpg',
+        name: '古道茶鄉',
+        price: 60,
+        rating: 4.7,
+        sell: 887
       },
       {
-        name: 'tea1'
+        img: '../assets/images/drinkImg.jpg',
+        name: '古道茶鄉',
+        price: 60,
+        rating: 4.7,
+        sell: 887
       },
       {
-        name: 'tea1'
+        img: '../assets/images/drinkImg.jpg',
+        name: '古道茶鄉',
+        price: 60,
+        rating: 4.7,
+        sell: 887
       },
       {
-        name: 'tea1'
+        img: '../assets/images/drinkImg.jpg',
+        name: '古道茶鄉',
+        price: 60,
+        rating: 4.7,
+        sell: 887
       },
       {
-        name: 'tea1'
+        img: '../assets/images/drinkImg.jpg',
+        name: '古道茶鄉',
+        price: 60,
+        rating: 4.7,
+        sell: 887
       },
       {
-        name: 'tea1'
+        img: '../assets/images/drinkImg.jpg',
+        name: '古道茶鄉',
+        price: 60,
+        rating: 4.7,
+        sell: 887
       },
       {
-        name: 'tea1'
+        img: '../assets/images/drinkImg.jpg',
+        name: '古道茶鄉',
+        price: 60,
+        rating: 4.7,
+        sell: 887
       },
       {
-        name: 'tea1'
+        img: '../assets/images/drinkImg.jpg',
+        name: '古道茶鄉',
+        price: 60,
+        rating: 4.7,
+        sell: 887
       },
-      {
-        name: 'tea1'
-      },
-      {
-        name: 'tea1'
-      },
-      {
-        name: 'tea1'
-      },
-      {
-        name: 'tea1'
-      },
-      {
-        name: 'tea1'
-      },
-      {
-        name: 'tea1'
-      },
-      {
-        name: 'tea1'
-      },
-      {
-        name: 'tea1'
-      },
-      {
-        name: 'tea1'
-      },
-      {
-        name: 'tea1'
-      }
     ]
   },
   methods: {
     load() {
       let teaLen = this.tea.length
-      // console.log('t :>> ', t)
+      console.log('teaLen :>> ', teaLen)
       if (this.dispalay < teaLen) {
         this.dispalay += 2
       } else {

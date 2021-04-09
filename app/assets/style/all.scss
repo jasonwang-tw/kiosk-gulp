@@ -45,6 +45,10 @@ $shadow: 0 0 20px rgba(0, 16, 165, 0.2);
 @mixin animTime {
   transition-duration: 0.2s;
 }
+@mixin round-border {
+  border-radius: 1rem;
+  border: 1px solid $line-blue;
+}
 
 html,
 body {
@@ -80,7 +84,9 @@ big,
 b {
   color: $main;
 }
-
+img {
+  max-width: 100%;
+}
 ::placeholder {
   color: $border !important;
   font-weight: 300;
@@ -88,6 +94,14 @@ b {
 
 .btn-lg {
   @include btn-lg();
+}
+.flex-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 
 // star
@@ -147,6 +161,10 @@ b {
 .el-input__inner {
   padding: 1rem 80px;
 }
+.el-input.is-active .el-input__inner,
+.el-input__inner:focus {
+  border-color: $border;
+}
 .freeBtn {
   text-align: center;
   display: block;
@@ -164,10 +182,14 @@ b {
   margin: 15px 0 0 20px;
 }
 
+// main
+.main {
+  padding: 2rem;
+}
+
 // top10
 
 .pageTitle {
-  margin: 30px 0;
   text-align: center;
   background-color: $border;
   h1 {
@@ -182,11 +204,55 @@ b {
   }
 }
 .infinite-list {
-  padding: 1rem;
+  margin-top: 50px;
+  padding-left: 0;
+  padding-top: 50px;
   height: 1200px;
 }
 .infinite-list-item {
-  height: 500px;
   list-style-type: none;
-  background-color: khaki;
+  .grid-content {
+    font-size: 32px;
+    position: relative;
+    height: 375px;
+    margin-bottom: 1rem;
+    @include round-border();
+    .badge {
+      margin: -20px 0 0 20px;
+      text-align: center;
+      color: $white;
+      position: absolute;
+      width: 41px;
+      height: 48px;
+      background-image: url(../images/indexNumber.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .drinkName,
+    .drinkPrice {
+      font-weight: bold;
+    }
+    .drinkPrice {
+      color: $notice;
+    }
+    .drinkRating,
+    .drinkSell {
+      color: $sup;
+    }
+    .drinkSell {
+      .type {
+        margin-right: 0.5rem;
+        color: $border;
+      }
+    }
+    .drinkInfo {
+      padding: 0.6rem;
+    }
+    .drinkPrice,
+    .drinkRating,
+    .drinkSell {
+      font-size: 28px;
+    }
+  }
 }
