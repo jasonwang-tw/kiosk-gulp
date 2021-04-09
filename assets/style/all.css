@@ -6,7 +6,7 @@ body {
   font-size: 1.75rem;
   color: #070150;
   overflow-x: hidden;
-  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -29,6 +29,9 @@ small,
 big,
 b {
   color: #070150; }
+
+img {
+  max-width: 100%; }
 
 ::-webkit-input-placeholder {
   color: #57c4e5 !important;
@@ -53,6 +56,20 @@ b {
 .btn-lg {
   border-radius: 99px;
   padding: 1rem 3rem; }
+
+.flex-space-between {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.mb-2 {
+  margin-bottom: 0.5rem; }
 
 .home {
   height: 100%;
@@ -118,6 +135,10 @@ b {
 .el-input__inner {
   padding: 1rem 80px; }
 
+.el-input.is-active .el-input__inner,
+.el-input__inner:focus {
+  border-color: #57c4e5; }
+
 .freeBtn {
   text-align: center;
   display: block;
@@ -133,8 +154,10 @@ b {
   color: #57c4e5;
   margin: 15px 0 0 20px; }
 
+.main {
+  padding: 2rem; }
+
 .pageTitle {
-  margin: 30px 0;
   text-align: center;
   background-color: #57c4e5; }
   .pageTitle h1 {
@@ -147,13 +170,47 @@ b {
     color: #f39519; }
 
 .infinite-list {
-  padding: 0;
+  margin-top: 50px;
+  padding-left: 0;
+  padding-top: 50px;
   height: 1200px; }
 
 .infinite-list-item {
-  height: 300px;
-  margin: 0 0 50px 0;
-  list-style-type: none;
-  background-color: khaki; }
+  list-style-type: none; }
+  .infinite-list-item .grid-content {
+    font-size: 32px;
+    position: relative;
+    height: 375px;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    border: 1px solid #afc8e9; }
+    .infinite-list-item .grid-content .badge {
+      margin: -20px 0 0 20px;
+      text-align: center;
+      color: white;
+      position: absolute;
+      width: 41px;
+      height: 48px;
+      background-image: url(../images/indexNumber.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center; }
+    .infinite-list-item .grid-content .drinkName,
+    .infinite-list-item .grid-content .drinkPrice {
+      font-weight: bold; }
+    .infinite-list-item .grid-content .drinkPrice {
+      color: #f56c6c; }
+    .infinite-list-item .grid-content .drinkRating,
+    .infinite-list-item .grid-content .drinkSell {
+      color: #f39519; }
+    .infinite-list-item .grid-content .drinkSell .type {
+      margin-right: 0.5rem;
+      color: #57c4e5; }
+    .infinite-list-item .grid-content .drinkInfo {
+      padding: 0.6rem; }
+    .infinite-list-item .grid-content .drinkPrice,
+    .infinite-list-item .grid-content .drinkRating,
+    .infinite-list-item .grid-content .drinkSell {
+      font-size: 28px; }
 
 /*# sourceMappingURL=all.css.map */

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-TW">
 
@@ -13,20 +14,22 @@
     <link rel="stylesheet" href="./assets/style/all.css">
 
 </head>
-  <div id="banner">
+
+  <body>
+    <div id="banner">
     <el-carousel trigger="click" arrow="always" :autoplay="false" height="200px">
         <el-carousel-item v-for="(item, index) in bannerItem">
             <img :src="item.imgSrc" alt="" />
         </el-carousel-item>
     </el-carousel>
 </div>
-    <div id="topMenu">
+      <div id="topMenu">
     <a v-for="(item, index) in menu" href="#" class="menuItem" :class="{ active: active == index }"
         @click="active = index">
         {{ item }}
     </a>
 </div>
-      <div id="search">
+        <div id="search">
     <el-row :gutter="20" type="flex" align="middle">
         <el-col :span="18">
             <el-input placeholder="" v-model="searchKey" class="el-icon-search" placeholder="搜尋飲品編號"></el-input>
@@ -36,25 +39,40 @@
         </el-col>
     </el-row>
 </div>
-        
+          <div class="main">
+            
 <div id="top-10">
-    <el-main>
-        <el-divider content-position="center" class="pageTitle">
+    <div class="pageTitle">
+        <el-divider content-position="center">
             <h1>熱銷排行TOP10</h1>
             <span>流行趨勢及熱銷飲品</span>
         </el-divider>
-        <ul class="infinite-list" v-infinite-scroll="load" style="overflow:auto">
-            <li v-for="(i, index) in tea" class="infinite-list-item" v-if="index < dispalay">
-                {{ i.name }}
-            </li>
-        </ul>
-    </el-main>
+    </div>
+    <el-row :gutter="30" class="infinite-list" v-infinite-scroll="load" style="overflow:auto">
+        <el-col :span="8" v-for="(i, index) in tea" class="infinite-list-item" v-if="index < dispalay">
+            <div class="grid-content">
+                <div class="badge">{{ index + 1 }}</div>
+                <img :src="i.img" alt="">
+                <div class="drinkInfo">
+                    <div class="flex-space-between mb-2">
+                        <div class="drinkName">{{i.name}}</div>
+                        <div class="drinkPrice">${{i.price}}</div>
+                    </div>
+                    <div class="flex-space-between">
+                        <div class="drinkRating"><i class="el-icon-star-on"></i>{{i.rating}}</div>
+                        <div class="drinkSell"><span class="type">已售出</span>{{i.sell}}</div>
+                    </div>
+                </div>
+            </div>
+        </el-col>
+    </el-row>
 </div>
-          <!-- <script src="./assets/js/vendors.js"></script> -->
+          </div>
+  </body>
+  <!-- <script src="./assets/js/vendors.js"></script> -->
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script src="./assets/js/all.js"></script>
-<script>
 
-</script>
 </html>
+
