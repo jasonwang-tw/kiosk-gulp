@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zh-TW">
 
@@ -32,7 +31,7 @@
         <div id="search">
     <el-row :gutter="20" type="flex" align="middle">
         <el-col :span="18">
-            <el-input placeholder="" v-model="searchKey" class="el-icon-search" placeholder="搜尋飲品編號"></el-input>
+            <el-input placeholder="搜尋飲品編號" v-model="searchKey" class="el-icon-search" placeholder="搜尋飲品編號"></el-input>
         </el-col>
         <el-col :span="6">
             <a href="#" class="freeBtn"><i class="el-icon-coffee"></i>自配方</a>
@@ -50,9 +49,11 @@
     </div>
     <el-row :gutter="30" class="infinite-list" v-infinite-scroll="load" style="overflow:auto">
         <el-col :span="8" v-for="(i, index) in tea" class="infinite-list-item" v-if="index < dispalay">
-            <div class="grid-content">
+            <a :href="i.link" class="grid-content">
                 <div class="badge">{{ index + 1 }}</div>
-                <img :src="i.img" alt="">
+                <div class="drinkImg">
+                    <img :src="i.img" alt="">
+                </div>
                 <div class="drinkInfo">
                     <div class="flex-space-between mb-2">
                         <div class="drinkName">{{i.name}}</div>
@@ -63,11 +64,15 @@
                         <div class="drinkSell"><span class="type">已售出</span>{{i.sell}}</div>
                     </div>
                 </div>
-            </div>
+            </a>
         </el-col>
     </el-row>
 </div>
           </div>
+          <div id="checkoutBar" class="flex-space-between ">
+    <div>總計<span>6</span>項，共<span>$325</span></div>
+    <div><a href="#"><i class="el-icon-shopping-bag-2"></i>確認訂單</a></div>
+</div>
   </body>
   <!-- <script src="./assets/js/vendors.js"></script> -->
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
@@ -75,4 +80,3 @@
 <script src="./assets/js/all.js"></script>
 
 </html>
-

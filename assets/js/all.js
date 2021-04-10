@@ -26,85 +26,77 @@ new Vue({
 new Vue({
   el: '#top-10',
   data: {
-    dispalay: 2,
+    dispalay: 3,
     tea: [{
       img: '../assets/images/drinkImg.jpg',
       name: '古道茶鄉',
       price: 60,
       rating: 4.7,
-      sell: 887
+      sell: 887,
+      link: ''
+    }, {
+      img: '../assets/images/banner.jpg',
+      name: '古道茶鄉',
+      price: 60,
+      rating: 4.7,
+      sell: 887,
+      link: ''
     }, {
       img: '../assets/images/drinkImg.jpg',
       name: '古道茶鄉',
       price: 60,
       rating: 4.7,
-      sell: 887
+      sell: 887,
+      link: ''
     }, {
       img: '../assets/images/drinkImg.jpg',
       name: '古道茶鄉',
       price: 60,
       rating: 4.7,
-      sell: 887
+      sell: 887,
+      link: ''
     }, {
       img: '../assets/images/drinkImg.jpg',
       name: '古道茶鄉',
       price: 60,
       rating: 4.7,
-      sell: 887
+      sell: 887,
+      link: ''
     }, {
       img: '../assets/images/drinkImg.jpg',
       name: '古道茶鄉',
       price: 60,
       rating: 4.7,
-      sell: 887
+      sell: 887,
+      link: ''
     }, {
       img: '../assets/images/drinkImg.jpg',
       name: '古道茶鄉',
       price: 60,
       rating: 4.7,
-      sell: 887
+      sell: 887,
+      link: ''
     }, {
       img: '../assets/images/drinkImg.jpg',
       name: '古道茶鄉',
       price: 60,
       rating: 4.7,
-      sell: 887
+      sell: 887,
+      link: ''
     }, {
       img: '../assets/images/drinkImg.jpg',
       name: '古道茶鄉',
       price: 60,
       rating: 4.7,
-      sell: 887
+      sell: 887,
+      link: ''
     }, {
       img: '../assets/images/drinkImg.jpg',
       name: '古道茶鄉',
       price: 60,
       rating: 4.7,
-      sell: 887
-    }, {
-      img: '../assets/images/drinkImg.jpg',
-      name: '古道茶鄉',
-      price: 60,
-      rating: 4.7,
-      sell: 887
-    }, {
-      img: '../assets/images/drinkImg.jpg',
-      name: '古道茶鄉',
-      price: 60,
-      rating: 4.7,
-      sell: 887
-    }, {
-      img: '../assets/images/drinkImg.jpg',
-      name: '古道茶鄉',
-      price: 60,
-      rating: 4.7,
-      sell: 887
-    }, {
-      img: '../assets/images/drinkImg.jpg',
-      name: '古道茶鄉',
-      price: 60,
-      rating: 4.7,
-      sell: 887
+      sell: 887,
+      link: ''
     }]
   },
   methods: {
@@ -113,7 +105,7 @@ new Vue({
       console.log('teaLen :>> ', teaLen);
 
       if (this.dispalay < teaLen) {
-        this.dispalay += 2;
+        this.dispalay += 3;
       } else {
         alert('nodata');
       }
