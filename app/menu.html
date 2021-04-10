@@ -14,9 +14,11 @@ engine: ejs
     </div>
     <el-row :gutter="30" class="infinite-list" v-infinite-scroll="load" style="overflow:auto">
         <el-col :span="8" v-for="(i, index) in tea" class="infinite-list-item" v-if="index < dispalay">
-            <div class="grid-content">
+            <a :href="i.link" class="grid-content">
                 <div class="badge">{{ index + 1 }}</div>
-                <img :src="i.img" alt="">
+                <div class="drinkImg">
+                    <img :src="i.img" alt="">
+                </div>
                 <div class="drinkInfo">
                     <div class="flex-space-between mb-2">
                         <div class="drinkName">{{i.name}}</div>
@@ -27,7 +29,7 @@ engine: ejs
                         <div class="drinkSell"><span class="type">已售出</span>{{i.sell}}</div>
                     </div>
                 </div>
-            </div>
+            </a>
         </el-col>
     </el-row>
 </div>

@@ -7,6 +7,7 @@ $line-blue: #afc8e9;
 $text-sup: #336699;
 $white: white;
 $shadow: 0 0 20px rgba(0, 16, 165, 0.2);
+$orderActive: #fff0d8;
 
 @mixin btn-sm {
   border-radius: 99px;
@@ -50,11 +51,14 @@ $shadow: 0 0 20px rgba(0, 16, 165, 0.2);
   border: 1px solid $line-blue;
 }
 
+* {
+  box-sizing: border-box;
+}
 html,
 body {
   margin: 0;
   padding: 0;
-  font-size: 1.75rem;
+  font-size: 32px;
   color: $main;
   overflow-x: hidden;
   // font-family: 'Noto Sans TC', sans-serif;
@@ -70,6 +74,14 @@ a {
   text-decoration: none;
   color: $main;
 }
+
+input,
+input[type="text"],
+button,
+i {
+  font-size: 1rem;
+}
+
 h1,
 h2,
 h3,
@@ -113,6 +125,7 @@ img {
 }
 .starBtn {
   a {
+    font-size: 1.5rem;
     display: block;
     background-color: white;
     margin-bottom: 1rem;
@@ -124,7 +137,6 @@ img {
 // topMenu
 
 #topMenu {
-  font-size: 36px;
   background-color: #f3f3f3;
   display: flex;
   padding: 0.8rem;
@@ -153,7 +165,6 @@ img {
 .el-input__inner,
 .freeBtn {
   border-radius: 0.8rem;
-  font-size: 36px;
   height: 80px;
   color: $border;
   border: 2px solid $border;
@@ -169,9 +180,8 @@ img {
   text-align: center;
   display: block;
   height: auto;
-  padding: 14.5px 1rem;
+  padding: 17px 1rem;
   i {
-    font-size: 42px;
     margin-right: 10px;
   }
 }
@@ -204,17 +214,17 @@ img {
   }
 }
 .infinite-list {
-  margin-top: 50px;
+  margin-top: 100px;
   padding-left: 0;
-  padding-top: 50px;
-  height: 1200px;
+  padding-top: 20px;
+  height: 1050px;
 }
 .infinite-list-item {
   list-style-type: none;
   .grid-content {
-    font-size: 32px;
+    display: inline-block;
     position: relative;
-    height: 375px;
+    height: 360px;
     margin-bottom: 1rem;
     @include round-border();
     .badge {
@@ -229,11 +239,21 @@ img {
       background-repeat: no-repeat;
       background-position: center;
     }
+    .drinkImg {
+      height: 220px;
+      overflow: hidden;
+      border-radius: 1rem 1rem 0 0;
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
     .drinkName,
     .drinkPrice {
       font-weight: bold;
     }
     .drinkPrice {
+      margin-top: 10px;
       color: $notice;
     }
     .drinkRating,
@@ -252,7 +272,32 @@ img {
     .drinkPrice,
     .drinkRating,
     .drinkSell {
-      font-size: 28px;
+      font-size: 0.8rem;
     }
+  }
+}
+
+// checkoutBar
+#checkoutBar {
+  font-size: 1.2rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: $orderActive;
+  padding: 1.5rem;
+  a {
+    border-radius: 99px;
+    padding: 0.7rem 1rem;
+    color: $white;
+    background-color: $sup;
+  }
+  span {
+    margin: 0 0.5rem;
+    color: $notice;
+    font-weight: bold;
+  }
+  i {
+    margin-right: 20px;
+    font-size: 1.2rem;
   }
 }
