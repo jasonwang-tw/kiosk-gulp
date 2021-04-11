@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Kiosk
+    </title>
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="./assets/style/all.css">
+</head>
+
+  <body>
+    <div id="banner">
+    <el-carousel trigger="click" arrow="always" :autoplay="false" height="200px">
+        <el-carousel-item v-for="(item, index) in bannerItem">
+            <img :src="item.imgSrc" alt="" />
+        </el-carousel-item>
+    </el-carousel>
+</div>
+      <div id="topMenu">
+    <template v-for="(i, index) in menu">
+        <a :href="i.link" class="menuItem" :class="{ active: dataShare.active == index }" @click="active = index">
+            {{ i.name }}
+        </a>
+    </template>
+</div>
+        <div id="search">
+    <el-row :gutter="20" type="flex" align="middle">
+        <el-col :span="18">
+            <el-input placeholder="搜尋飲品編號" v-model="searchKey" class="el-icon-search" placeholder="搜尋飲品編號"></el-input>
+        </el-col>
+        <el-col :span="6">
+            <a href="#" class="freeBtn"><i class="el-icon-coffee"></i>自配方</a>
+        </el-col>
+    </el-row>
+</div>
+          <div id="main">
+            <div id="recommender_detail" class="mainIndex" data-index="2">
+    <el-row class="mb-5">
+        <el-col :span="24">
+            <i class="el-icon-arrow-left mr-2"></i><a href="celebrity.html">返回</a>
+        </el-col>
+    </el-row>
+    <el-row>
+        <el-col :span="24">
+            <template v-for="(i, index) in recommend" :key="index" v-if="i.name === '冷淡熊'">
+                <div class="grid-content recommendCard">
+                    <div class="flex-space-between">
+                        <div>
+                            <div class="recommendPhoto">
+                                <img :src="i.photo" alt="">
+                            </div>
+                        </div>
+                        <div class="recommendInfo">
+                            <div class="recommendName mb-2">{{i.name}}</div>
+                            <div class="recommendAssets mb-2">
+                                <div><i class="el-icon-user mr-2"></i>{{i.like}}關注</div>
+                                <div><i class="el-icon-milk-tea ml-2 mr-2"></i>已上架{{i.quantity}}種配方</div>
+                            </div>
+                            <div class="recommendText">{{i.info}}</div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </el-col>
+    </el-row>
+    <el-row :gutter="30" class="pt-5" infinite-scroll-disabled="disabled_recommender" v-infinite-scroll="load"
+        style="overflow:auto">
+        <template v-for="(item, index) in recommend" v-if="item.name === '冷淡熊'">
+            <el-col :span="8" class="infinite-list-item" v-for="(i, index) in item.drink" :key="index">
+                <a :href="i.link" class="grid-content drinkCard">
+                    <div class="badge" :class="{ goodDrink: i.good}"></div>
+                    <div class="drinkImg">
+                        <img :src="i.img" alt="">
+                    </div>
+                    <div class="drinkInfo">
+                        <div class="flex-space-between mb-2">
+                            <div class="drinkName">{{i.name}}</div>
+                            <div class="drinkPrice">${{i.price}}</div>
+                        </div>
+                        <div class="flex-space-between">
+                            <div class="drinkRating"><i class="el-icon-star-on"></i>{{i.rating}}</div>
+                            <div class="drinkSell"><span class="type">已售出</span>{{i.sell}}</div>
+                        </div>
+                    </div>
+                </a>
+            </el-col>
+        </template>
+        <el-col :span="24">
+            <p v-if="loading"><i class="el-icon-loading mr-2"></i>讀取中...</p>
+            <p v-if="noMore_recommender">没有更多了</p>
+        </el-col>
+    </el-row>
+</div>
+          </div>
+          <div id="checkoutBar" class="flex-space-between ">
+    <div>總計<span>6</span>項，共<span>$325</span></div>
+    <div><a href="#"><i class="el-icon-shopping-bag-2"></i>確認訂單</a></div>
+</div>
+            <footer>
+              <!-- <script src="./assets/js/vendors.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="./assets/js/all.js"></script>
+            </footer>
+  </body>
+
+</html>

@@ -4,9 +4,7 @@ var dataShare = {
   active: 0
 }; // menuActive
 
-var activeIndex = document.querySelector('.mainIndex').getAttribute('data-index'); // get main id
-
-var main_el = document.querySelector('.mainIndex').getAttribute('id');
+var activeIndex = document.querySelector('.mainIndex').getAttribute('data-index');
 dataShare.active = activeIndex;
 new Vue({
   el: '#banner',
@@ -59,9 +57,10 @@ new Vue({
   }
 });
 new Vue({
-  el: '#' + main_el,
+  el: '#main',
   data: {
     dispalay: 3,
+    loading: false,
     tea: [{
       img: './assets/images/drinkImg.jpg',
       name: '古道茶鄉',
@@ -152,7 +151,34 @@ new Vue({
       photo: './assets/images/photo4.png',
       name: '冷淡熊',
       info: '嗨，大家好〜在這裡我會給大家帶來搞笑，惡趣味的飲料〜',
-      link: '#'
+      link: 'celebrity_detail.html',
+      like: 99,
+      quantity: 3,
+      drink: [{
+        img: './assets/images/drinkImg.jpg',
+        name: '冷淡茶',
+        price: 60,
+        rating: 4.7,
+        sell: 887,
+        link: '#',
+        good: true
+      }, {
+        img: './assets/images/drinkImg.jpg',
+        name: '草莓熊',
+        price: 60,
+        rating: 4.7,
+        sell: 887,
+        link: '#',
+        good: true
+      }, {
+        img: './assets/images/drinkImg.jpg',
+        name: '黑白熊',
+        price: 60,
+        rating: 4.7,
+        sell: 887,
+        link: '#',
+        good: false
+      }]
     }, {
       photo: './assets/images/photo1.png',
       name: 'Jomen',
@@ -170,16 +196,29 @@ new Vue({
       link: '#'
     }]
   },
+  computed: {
+    noMore_recommender: function noMore_recommender() {
+      return this.dispalay >= this.recommend.length;
+    },
+    disabled_recommender: function disabled_recommender() {
+      return this.loading || this.noMore_recommender;
+    },
+    noMore_top_10: function noMore_top_10() {
+      return this.dispalay >= this.tea.length;
+    },
+    disabled_top_10: function disabled_top_10() {
+      return this.loading || this.noMore_top_10;
+    }
+  },
   methods: {
     load: function load() {
-      var teaLen = this.tea.length;
-      var recommendLen = this.recommend.length;
+      var _this = this;
 
-      if (this.dispalay < teaLen || this.dispalay < recommendLen) {
-        this.dispalay += 3;
-      } else {
-        alert('nodata');
-      }
+      this.loading = true;
+      setTimeout(function () {
+        _this.dispalay += 3;
+        _this.loading = false;
+      }, 1000);
     }
   }
 });

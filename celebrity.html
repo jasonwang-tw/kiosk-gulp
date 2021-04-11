@@ -45,7 +45,8 @@
             <span>瞧瞧名人都喝啥</span>
         </el-divider>
     </div>
-    <el-row :gutter="30" class="infinite-list" v-infinite-scroll="load" style="overflow:auto">
+    <el-row :gutter="30" class="infinite-list" infinite-scroll-disabled="disabled_recommender" v-infinite-scroll="load"
+        style="overflow:auto">
         <el-col :span="24" v-for="(i, index) in recommend" class="infinite-list-item" v-if="index < dispalay">
             <div class="grid-content recommendCard">
                 <div class="flex-space-between">
@@ -63,6 +64,10 @@
                     </div>
                 </div>
             </div>
+        </el-col>
+        <el-col :span="24">
+            <p v-if="loading"><i class="el-icon-loading mr-2"></i>讀取中...</p>
+            <p v-if="noMore_recommender">没有更多了</p>
         </el-col>
     </el-row>
 </div>

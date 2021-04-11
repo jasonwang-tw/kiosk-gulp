@@ -86,6 +86,18 @@ img {
 .mb-2 {
   margin-bottom: 0.5rem; }
 
+.mb-5 {
+  margin-bottom: 1.25rem; }
+
+.mr-2 {
+  margin-right: 0.5rem; }
+
+.ml-2 {
+  margin-left: 0.5rem; }
+
+.pt-5 {
+  padding-top: 1.25rem; }
+
 .home {
   height: 100%;
   background-image: url("../images/index.jpg");
@@ -168,7 +180,7 @@ img {
   margin: 15px 0 0 20px; }
 
 #main {
-  padding: 2rem; }
+  padding: 1rem 2rem; }
 
 .pageTitle {
   text-align: center;
@@ -185,87 +197,108 @@ img {
 .infinite-list {
   margin-top: 100px;
   padding-left: 0;
-  padding-top: 20px;
   height: 1050px; }
 
 .infinite-list-item {
   list-style-type: none; }
-  .infinite-list-item .grid-content {
+
+.drinkCard .badge {
+  margin: -30px 0 0 20px;
+  color: white;
+  position: absolute;
+  width: 70px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.drinkCard .topDrink {
+  text-align: center;
+  padding-top: 15px;
+  background-image: url(../images/indexNumber.png); }
+
+.drinkCard .goodDrink {
+  background-image: url(../images/good.png); }
+
+.drinkCard .drinkImg {
+  height: 220px;
+  overflow: hidden;
+  border-radius: 1rem 1rem 0 0; }
+  .drinkCard .drinkImg img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
+
+.drinkCard .drinkName,
+.drinkCard .drinkPrice {
+  font-weight: bold; }
+
+.drinkCard .drinkPrice {
+  margin-top: 10px;
+  color: #f56c6c; }
+
+.drinkCard .drinkRating,
+.drinkCard .drinkSell {
+  color: #f39519; }
+
+.drinkCard .drinkSell .type {
+  margin-right: 0.5rem;
+  color: #57c4e5; }
+
+.drinkCard .drinkInfo {
+  padding: 0.6rem; }
+
+.drinkCard .drinkPrice,
+.drinkCard .drinkRating,
+.drinkCard .drinkSell {
+  font-size: 0.8rem; }
+
+.recommendCard {
+  padding: 1rem;
+  -webkit-box-shadow: 0 0 20px rgba(0, 16, 165, 0.1);
+          box-shadow: 0 0 20px rgba(0, 16, 165, 0.1); }
+  .recommendCard .recommendPhoto {
+    height: 180px;
+    width: 180px;
+    border-radius: 99px;
+    overflow: hidden;
+    background-color: #d9e9fe; }
+    .recommendCard .recommendPhoto img {
+      height: 100%;
+      -o-object-fit: cover;
+         object-fit: cover; }
+  .recommendCard .recommendAssets {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #f39519; }
+  .recommendCard .recommendName {
+    font-size: 1.2rem; }
+  .recommendCard .recommendInfo {
+    margin: 0 1rem; }
+  .recommendCard .recommendText {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; }
+  .recommendCard .recommendBtn {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    border: 1px solid #57c4e5;
     display: inline-block;
-    position: relative;
-    margin-bottom: 1rem;
-    background-color: white;
-    width: 100%;
-    border-radius: 1rem;
-    border: 1px solid #afc8e9; }
-  .infinite-list-item .top10Card {
-    height: 360px; }
-    .infinite-list-item .top10Card .badge {
-      margin: -20px 0 0 20px;
-      text-align: center;
-      color: white;
-      position: absolute;
-      width: 41px;
-      height: 48px;
-      background-image: url(../images/indexNumber.png);
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center; }
-    .infinite-list-item .top10Card .drinkImg {
-      height: 220px;
-      overflow: hidden;
-      border-radius: 1rem 1rem 0 0; }
-      .infinite-list-item .top10Card .drinkImg img {
-        height: 100%;
-        -o-object-fit: cover;
-           object-fit: cover; }
-    .infinite-list-item .top10Card .drinkName,
-    .infinite-list-item .top10Card .drinkPrice {
-      font-weight: bold; }
-    .infinite-list-item .top10Card .drinkPrice {
-      margin-top: 10px;
-      color: #f56c6c; }
-    .infinite-list-item .top10Card .drinkRating,
-    .infinite-list-item .top10Card .drinkSell {
-      color: #f39519; }
-    .infinite-list-item .top10Card .drinkSell .type {
-      margin-right: 0.5rem;
+    border-radius: 99px;
+    padding: 0.5rem 1rem; }
+    .recommendCard .recommendBtn a {
       color: #57c4e5; }
-    .infinite-list-item .top10Card .drinkInfo {
-      padding: 0.6rem; }
-    .infinite-list-item .top10Card .drinkPrice,
-    .infinite-list-item .top10Card .drinkRating,
-    .infinite-list-item .top10Card .drinkSell {
-      font-size: 0.8rem; }
-  .infinite-list-item .recommendCard {
-    padding: 1rem; }
-    .infinite-list-item .recommendCard .recommendPhoto {
-      height: 180px;
-      width: 180px;
-      border-radius: 99px;
-      overflow: hidden;
-      background-color: #d9e9fe; }
-      .infinite-list-item .recommendCard .recommendPhoto img {
-        height: 100%;
-        -o-object-fit: cover;
-           object-fit: cover; }
-    .infinite-list-item .recommendCard .recommendName {
-      font-size: 1.2rem; }
-    .infinite-list-item .recommendCard .recommendInfo {
-      margin: 0 1rem; }
-    .infinite-list-item .recommendCard .recommendText {
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical; }
-    .infinite-list-item .recommendCard .recommendBtn {
-      -ms-flex-negative: 0;
-          flex-shrink: 0;
-      border: 1px solid #57c4e5;
-      border-radius: 99px;
-      padding: 0.5rem 1rem; }
-      .infinite-list-item .recommendCard .recommendBtn a {
-        color: #57c4e5; }
+
+.grid-content {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 1rem;
+  background-color: white;
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid #afc8e9; }
 
 #checkoutBar {
   font-size: 1.2rem;

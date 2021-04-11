@@ -46,10 +46,11 @@
             <span>流行趨勢及熱銷飲品</span>
         </el-divider>
     </div>
-    <el-row :gutter="30" class="infinite-list" v-infinite-scroll="load" style="overflow:auto">
+    <el-row :gutter="30" class="infinite-list pt-5" infinite-scroll-disabled="disabled_top_10" v-infinite-scroll="load"
+        style="overflow:auto">
         <el-col :span="8" v-for="(i, index) in tea" class="infinite-list-item" v-if="index < dispalay">
-            <a :href="i.link" class="grid-content top10Card">
-                <div class="badge">{{ index + 1 }}</div>
+            <a :href="i.link" class="grid-content drinkCard">
+                <div class="badge topDrink">{{ index + 1 }}</div>
                 <div class="drinkImg">
                     <img :src="i.img" alt="">
                 </div>
@@ -64,6 +65,10 @@
                     </div>
                 </div>
             </a>
+        </el-col>
+        <el-col :span="24">
+            <p v-if="loading"><i class="el-icon-loading mr-2"></i>讀取中...</p>
+            <p v-if="noMore_top_10">没有更多了</p>
         </el-col>
     </el-row>
 </div>
