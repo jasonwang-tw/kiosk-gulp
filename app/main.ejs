@@ -1,12 +1,18 @@
-<%- include('header') %>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<%- include('./component/header') %>
 
   <body>
     <%- include('./component/banner') %>
       <%- include('./component/topMenu') %>
         <%- include('./component/search') %>
-          <div class="main">
+          <div id="main">
             <%- contents %>
           </div>
           <%- include('./component/checkoutBar') %>
+            <footer>
+              <%- include('./component/footer') %>
+            </footer>
   </body>
-  <%- include('footer') %>
+
+</html>

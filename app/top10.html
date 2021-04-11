@@ -1,11 +1,11 @@
 ---
 title: Kiosk
-layout: ./app/menu.ejs
+layout: ./app/main.ejs
 engine: ejs
 <!-- current: index -->
 ---
 
-<div id="top-10">
+<div id="top-10" class="mainIndex" data-index="0">
     <div class="pageTitle">
         <el-divider content-position="center">
             <h1>熱銷排行TOP10</h1>
@@ -14,7 +14,7 @@ engine: ejs
     </div>
     <el-row :gutter="30" class="infinite-list" v-infinite-scroll="load" style="overflow:auto">
         <el-col :span="8" v-for="(i, index) in tea" class="infinite-list-item" v-if="index < dispalay">
-            <a :href="i.link" class="grid-content">
+            <a :href="i.link" class="grid-content top10Card">
                 <div class="badge">{{ index + 1 }}</div>
                 <div class="drinkImg">
                     <img :src="i.img" alt="">

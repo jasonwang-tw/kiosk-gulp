@@ -1,6 +1,7 @@
 <div id="topMenu">
-    <a v-for="(item, index) in menu" href="#" class="menuItem" :class="{ active: active == index }"
-        @click="active = index">
-        {{ item }}
-    </a>
+    <template v-for="(i, index) in menu">
+        <a :href="i.link" class="menuItem" :class="{ active: dataShare.active == index }" @click="active = index">
+            {{ i.name }}
+        </a>
+    </template>
 </div>

@@ -1,0 +1,34 @@
+---
+title: Kiosk
+layout: ./app/main.ejs
+engine: ejs
+<!-- current: index -->
+---
+<div id="recommender" class="mainIndex" data-index="2">
+    <div class="pageTitle">
+        <el-divider content-position="center">
+            <h1>名人堂</h1>
+            <span>瞧瞧名人都喝啥</span>
+        </el-divider>
+    </div>
+    <el-row :gutter="30" class="infinite-list" v-infinite-scroll="load" style="overflow:auto">
+        <el-col :span="24" v-for="(i, index) in recommend" class="infinite-list-item" v-if="index < dispalay">
+            <div class="grid-content recommendCard">
+                <div class="flex-space-between">
+                    <div>
+                        <div class="recommendPhoto">
+                            <img :src="i.photo" alt="">
+                        </div>
+                    </div>
+                    <div class="recommendInfo">
+                        <div class="recommendName mb-2">{{i.name}}</div>
+                        <div class="recommendText">{{i.info}}</div>
+                    </div>
+                    <div class="recommendBtn">
+                        <a :href="i.link">名人推薦</a>
+                    </div>
+                </div>
+            </div>
+        </el-col>
+    </el-row>
+</div>

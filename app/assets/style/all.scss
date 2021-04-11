@@ -11,12 +11,12 @@ $orderActive: #fff0d8;
 
 @mixin btn-sm {
   border-radius: 99px;
-  padding: 1rem 3rem;
+  padding: 0.5rem 1rem;
 }
 
 @mixin btn-md {
   border-radius: 99px;
-  padding: 0.8rem 1.7rem;
+  padding: 0.6rem 1.5rem;
 }
 
 @mixin btn-lg {
@@ -50,6 +50,13 @@ $orderActive: #fff0d8;
   border-radius: 1rem;
   border: 1px solid $line-blue;
 }
+@mixin etc($number: 2) {
+  overflow: hidden;
+  // text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $number;
+  -webkit-box-orient: vertical;
+}
 
 * {
   box-sizing: border-box;
@@ -69,7 +76,11 @@ body {
   font-weight: 400;
   height: 100%;
 }
-
+body {
+  background-position: center 600px;
+  background-repeat: no-repeat;
+  background-image: url(../images/gradientBg.png);
+}
 a {
   text-decoration: none;
   color: $main;
@@ -193,7 +204,7 @@ img {
 }
 
 // main
-.main {
+#main {
   padding: 2rem;
 }
 
@@ -217,16 +228,20 @@ img {
   margin-top: 100px;
   padding-left: 0;
   padding-top: 20px;
-  height: 1050px;
+  height: 950px;
 }
 .infinite-list-item {
   list-style-type: none;
   .grid-content {
     display: inline-block;
     position: relative;
-    height: 360px;
     margin-bottom: 1rem;
+    background-color: $white;
+    width: 100%;
     @include round-border();
+  }
+  .top10Card {
+    height: 360px;
     .badge {
       margin: -20px 0 0 20px;
       text-align: center;
@@ -273,6 +288,37 @@ img {
     .drinkRating,
     .drinkSell {
       font-size: 0.8rem;
+    }
+  }
+  .recommendCard {
+    padding: 1rem;
+    .recommendPhoto {
+      height: 180px;
+      width: 180px;
+      border-radius: 99px;
+      overflow: hidden;
+      background-color: $line;
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .recommendName {
+      font-size: 1.2rem;
+    }
+    .recommendInfo {
+      margin: 0 1rem;
+    }
+    .recommendText {
+      @include etc();
+    }
+    .recommendBtn {
+      flex-shrink: 0;
+      border: 1px solid $border;
+      @include btn-sm();
+      a {
+        color: $border;
+      }
     }
   }
 }
