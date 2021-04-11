@@ -16,6 +16,11 @@ body {
   font-weight: 400;
   height: 100%; }
 
+body {
+  background-position: center 600px;
+  background-repeat: no-repeat;
+  background-image: url(../images/gradientBg.png); }
+
 a {
   text-decoration: none;
   color: #070150; }
@@ -120,7 +125,7 @@ img {
     background-color: white;
     margin-right: 0.8rem;
     border-radius: 99px;
-    padding: 0.8rem 1.7rem;
+    padding: 0.6rem 1.5rem;
     -webkit-transition-duration: 0.2s;
          -o-transition-duration: 0.2s;
             transition-duration: 0.2s; }
@@ -162,7 +167,7 @@ img {
   color: #57c4e5;
   margin: 15px 0 0 20px; }
 
-.main {
+#main {
   padding: 2rem; }
 
 .pageTitle {
@@ -181,18 +186,21 @@ img {
   margin-top: 100px;
   padding-left: 0;
   padding-top: 20px;
-  height: 1050px; }
+  height: 950px; }
 
 .infinite-list-item {
   list-style-type: none; }
   .infinite-list-item .grid-content {
     display: inline-block;
     position: relative;
-    height: 360px;
     margin-bottom: 1rem;
+    background-color: white;
+    width: 100%;
     border-radius: 1rem;
     border: 1px solid #afc8e9; }
-    .infinite-list-item .grid-content .badge {
+  .infinite-list-item .top10Card {
+    height: 360px; }
+    .infinite-list-item .top10Card .badge {
       margin: -20px 0 0 20px;
       text-align: center;
       color: white;
@@ -203,32 +211,61 @@ img {
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center; }
-    .infinite-list-item .grid-content .drinkImg {
+    .infinite-list-item .top10Card .drinkImg {
       height: 220px;
       overflow: hidden;
       border-radius: 1rem 1rem 0 0; }
-      .infinite-list-item .grid-content .drinkImg img {
+      .infinite-list-item .top10Card .drinkImg img {
         height: 100%;
         -o-object-fit: cover;
            object-fit: cover; }
-    .infinite-list-item .grid-content .drinkName,
-    .infinite-list-item .grid-content .drinkPrice {
+    .infinite-list-item .top10Card .drinkName,
+    .infinite-list-item .top10Card .drinkPrice {
       font-weight: bold; }
-    .infinite-list-item .grid-content .drinkPrice {
+    .infinite-list-item .top10Card .drinkPrice {
       margin-top: 10px;
       color: #f56c6c; }
-    .infinite-list-item .grid-content .drinkRating,
-    .infinite-list-item .grid-content .drinkSell {
+    .infinite-list-item .top10Card .drinkRating,
+    .infinite-list-item .top10Card .drinkSell {
       color: #f39519; }
-    .infinite-list-item .grid-content .drinkSell .type {
+    .infinite-list-item .top10Card .drinkSell .type {
       margin-right: 0.5rem;
       color: #57c4e5; }
-    .infinite-list-item .grid-content .drinkInfo {
+    .infinite-list-item .top10Card .drinkInfo {
       padding: 0.6rem; }
-    .infinite-list-item .grid-content .drinkPrice,
-    .infinite-list-item .grid-content .drinkRating,
-    .infinite-list-item .grid-content .drinkSell {
+    .infinite-list-item .top10Card .drinkPrice,
+    .infinite-list-item .top10Card .drinkRating,
+    .infinite-list-item .top10Card .drinkSell {
       font-size: 0.8rem; }
+  .infinite-list-item .recommendCard {
+    padding: 1rem; }
+    .infinite-list-item .recommendCard .recommendPhoto {
+      height: 180px;
+      width: 180px;
+      border-radius: 99px;
+      overflow: hidden;
+      background-color: #d9e9fe; }
+      .infinite-list-item .recommendCard .recommendPhoto img {
+        height: 100%;
+        -o-object-fit: cover;
+           object-fit: cover; }
+    .infinite-list-item .recommendCard .recommendName {
+      font-size: 1.2rem; }
+    .infinite-list-item .recommendCard .recommendInfo {
+      margin: 0 1rem; }
+    .infinite-list-item .recommendCard .recommendText {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; }
+    .infinite-list-item .recommendCard .recommendBtn {
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+      border: 1px solid #57c4e5;
+      border-radius: 99px;
+      padding: 0.5rem 1rem; }
+      .infinite-list-item .recommendCard .recommendBtn a {
+        color: #57c4e5; }
 
 #checkoutBar {
   font-size: 1.2rem;

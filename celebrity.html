@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +10,6 @@
     <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <link rel="stylesheet" href="./assets/style/all.css">
-
 </head>
 
   <body>
@@ -23,10 +21,11 @@
     </el-carousel>
 </div>
       <div id="topMenu">
-    <a v-for="(item, index) in menu" href="#" class="menuItem" :class="{ active: active == index }"
-        @click="active = index">
-        {{ item }}
-    </a>
+    <template v-for="(i, index) in menu">
+        <a :href="i.link" class="menuItem" :class="{ active: dataShare.active == index }" @click="active = index">
+            {{ i.name }}
+        </a>
+    </template>
 </div>
         <div id="search">
     <el-row :gutter="20" type="flex" align="middle">
@@ -38,33 +37,32 @@
         </el-col>
     </el-row>
 </div>
-          <div class="main">
-            
-<div id="top-10">
+          <div id="main">
+            <div id="recommender" class="mainIndex" data-index="2">
     <div class="pageTitle">
         <el-divider content-position="center">
-            <h1>熱銷排行TOP10</h1>
-            <span>流行趨勢及熱銷飲品</span>
+            <h1>名人堂</h1>
+            <span>瞧瞧名人都喝啥</span>
         </el-divider>
     </div>
     <el-row :gutter="30" class="infinite-list" v-infinite-scroll="load" style="overflow:auto">
-        <el-col :span="8" v-for="(i, index) in tea" class="infinite-list-item" v-if="index < dispalay">
-            <a :href="i.link" class="grid-content">
-                <div class="badge">{{ index + 1 }}</div>
-                <div class="drinkImg">
-                    <img :src="i.img" alt="">
-                </div>
-                <div class="drinkInfo">
-                    <div class="flex-space-between mb-2">
-                        <div class="drinkName">{{i.name}}</div>
-                        <div class="drinkPrice">${{i.price}}</div>
+        <el-col :span="24" v-for="(i, index) in recommend" class="infinite-list-item" v-if="index < dispalay">
+            <div class="grid-content recommendCard">
+                <div class="flex-space-between">
+                    <div>
+                        <div class="recommendPhoto">
+                            <img :src="i.photo" alt="">
+                        </div>
                     </div>
-                    <div class="flex-space-between">
-                        <div class="drinkRating"><i class="el-icon-star-on"></i>{{i.rating}}</div>
-                        <div class="drinkSell"><span class="type">已售出</span>{{i.sell}}</div>
+                    <div class="recommendInfo">
+                        <div class="recommendName mb-2">{{i.name}}</div>
+                        <div class="recommendText">{{i.info}}</div>
+                    </div>
+                    <div class="recommendBtn">
+                        <a :href="i.link">名人推薦</a>
                     </div>
                 </div>
-            </a>
+            </div>
         </el-col>
     </el-row>
 </div>
@@ -73,10 +71,12 @@
     <div>總計<span>6</span>項，共<span>$325</span></div>
     <div><a href="#"><i class="el-icon-shopping-bag-2"></i>確認訂單</a></div>
 </div>
-  </body>
-  <!-- <script src="./assets/js/vendors.js"></script> -->
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
+            <footer>
+              <!-- <script src="./assets/js/vendors.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script src="./assets/js/all.js"></script>
+            </footer>
+  </body>
 
 </html>
