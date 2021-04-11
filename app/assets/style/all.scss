@@ -7,6 +7,7 @@ $line-blue: #afc8e9;
 $text-sup: #336699;
 $white: white;
 $shadow: 0 0 20px rgba(0, 16, 165, 0.2);
+$cardShadow: 0 0 20px rgba(0, 16, 165, 0.1);
 $orderActive: #fff0d8;
 
 @mixin btn-sm {
@@ -126,6 +127,18 @@ img {
 .mb-2 {
   margin-bottom: 0.5rem;
 }
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+.mr-2 {
+  margin-right: 0.5rem;
+}
+.ml-2 {
+  margin-left: 0.5rem;
+}
+.pt-5 {
+  padding-top: 1.25rem;
+}
 
 // star
 .home {
@@ -205,7 +218,7 @@ img {
 
 // main
 #main {
-  padding: 2rem;
+  padding: 1rem 2rem;
 }
 
 // top10
@@ -227,102 +240,112 @@ img {
 .infinite-list {
   margin-top: 100px;
   padding-left: 0;
-  padding-top: 20px;
-  height: 950px;
+  height: 1050px;
 }
 .infinite-list-item {
   list-style-type: none;
-  .grid-content {
+}
+.drinkCard {
+  // height: 360px;
+  .badge {
+    margin: -30px 0 0 20px;
+    color: $white;
+    position: absolute;
+    width: 70px;
+    height: 80px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .topDrink {
+    text-align: center;
+    padding-top: 15px;
+    background-image: url(../images/indexNumber.png);
+  }
+  .goodDrink {
+    background-image: url(../images/good.png);
+  }
+  .drinkImg {
+    height: 220px;
+    overflow: hidden;
+    border-radius: 1rem 1rem 0 0;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .drinkName,
+  .drinkPrice {
+    font-weight: bold;
+  }
+  .drinkPrice {
+    margin-top: 10px;
+    color: $notice;
+  }
+  .drinkRating,
+  .drinkSell {
+    color: $sup;
+  }
+  .drinkSell {
+    .type {
+      margin-right: 0.5rem;
+      color: $border;
+    }
+  }
+  .drinkInfo {
+    padding: 0.6rem;
+  }
+  .drinkPrice,
+  .drinkRating,
+  .drinkSell {
+    font-size: 0.8rem;
+  }
+}
+.recommendCard {
+  padding: 1rem;
+  box-shadow: $cardShadow;
+  .recommendPhoto {
+    height: 180px;
+    width: 180px;
+    border-radius: 99px;
+    overflow: hidden;
+    background-color: $line;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .recommendAssets {
+    display: flex;
+    color: $sup;
+  }
+  .recommendName {
+    font-size: 1.2rem;
+  }
+  .recommendInfo {
+    margin: 0 1rem;
+  }
+  .recommendText {
+    @include etc();
+  }
+  .recommendBtn {
+    flex-shrink: 0;
+    border: 1px solid $border;
     display: inline-block;
-    position: relative;
-    margin-bottom: 1rem;
-    background-color: $white;
-    width: 100%;
-    @include round-border();
-  }
-  .top10Card {
-    height: 360px;
-    .badge {
-      margin: -20px 0 0 20px;
-      text-align: center;
-      color: $white;
-      position: absolute;
-      width: 41px;
-      height: 48px;
-      background-image: url(../images/indexNumber.png);
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .drinkImg {
-      height: 220px;
-      overflow: hidden;
-      border-radius: 1rem 1rem 0 0;
-      img {
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-    .drinkName,
-    .drinkPrice {
-      font-weight: bold;
-    }
-    .drinkPrice {
-      margin-top: 10px;
-      color: $notice;
-    }
-    .drinkRating,
-    .drinkSell {
-      color: $sup;
-    }
-    .drinkSell {
-      .type {
-        margin-right: 0.5rem;
-        color: $border;
-      }
-    }
-    .drinkInfo {
-      padding: 0.6rem;
-    }
-    .drinkPrice,
-    .drinkRating,
-    .drinkSell {
-      font-size: 0.8rem;
-    }
-  }
-  .recommendCard {
-    padding: 1rem;
-    .recommendPhoto {
-      height: 180px;
-      width: 180px;
-      border-radius: 99px;
-      overflow: hidden;
-      background-color: $line;
-      img {
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-    .recommendName {
-      font-size: 1.2rem;
-    }
-    .recommendInfo {
-      margin: 0 1rem;
-    }
-    .recommendText {
-      @include etc();
-    }
-    .recommendBtn {
-      flex-shrink: 0;
-      border: 1px solid $border;
-      @include btn-sm();
-      a {
-        color: $border;
-      }
+    @include btn-sm();
+    a {
+      color: $border;
     }
   }
 }
-
+.grid-content {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 1rem;
+  background-color: $white;
+  width: 100%;
+  @include round-border();
+}
 // checkoutBar
 #checkoutBar {
   font-size: 1.2rem;

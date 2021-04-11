@@ -3,9 +3,6 @@ let dataShare = {
 }
 // menuActive
 let activeIndex = document.querySelector('.mainIndex').getAttribute('data-index');
-// get main id
-let main_el = document.querySelector('.mainIndex').getAttribute('id');
-
 dataShare.active = activeIndex;
 
 new Vue({
@@ -13,10 +10,10 @@ new Vue({
   data: {
     bannerItem: [
       {
-        imgSrc: '../assets/images/banner.jpg'
+        imgSrc: './assets/images/banner.jpg'
       },
       {
-        imgSrc: '../assets/images/banner.jpg'
+        imgSrc: './assets/images/banner.jpg'
       }
     ]
   }
@@ -73,12 +70,13 @@ new Vue({
 })
 
 new Vue({
-  el: '#' + main_el,
+  el: '#main',
   data: {
     dispalay: 3,
+    loading: false,
     tea: [
       {
-        img: '../assets/images/drinkImg.jpg',
+        img: './assets/images/drinkImg.jpg',
         name: '古道茶鄉',
         price: 60,
         rating: 4.7,
@@ -86,7 +84,7 @@ new Vue({
         link: '#'
       },
       {
-        img: '../assets/images/banner.jpg',
+        img: './assets/images/banner.jpg',
         name: '古道茶鄉',
         price: 60,
         rating: 4.7,
@@ -94,7 +92,7 @@ new Vue({
         link: '#'
       },
       {
-        img: '../assets/images/drinkImg.jpg',
+        img: './assets/images/drinkImg.jpg',
         name: '古道茶鄉',
         price: 60,
         rating: 4.7,
@@ -102,7 +100,7 @@ new Vue({
         link: '#'
       },
       {
-        img: '../assets/images/drinkImg.jpg',
+        img: './assets/images/drinkImg.jpg',
         name: '古道茶鄉',
         price: 60,
         rating: 4.7,
@@ -110,7 +108,7 @@ new Vue({
         link: '#'
       },
       {
-        img: '../assets/images/drinkImg.jpg',
+        img: './assets/images/drinkImg.jpg',
         name: '古道茶鄉',
         price: 60,
         rating: 4.7,
@@ -118,7 +116,7 @@ new Vue({
         link: '#'
       },
       {
-        img: '../assets/images/drinkImg.jpg',
+        img: './assets/images/drinkImg.jpg',
         name: '古道茶鄉',
         price: 60,
         rating: 4.7,
@@ -126,7 +124,7 @@ new Vue({
         link: '#'
       },
       {
-        img: '../assets/images/drinkImg.jpg',
+        img: './assets/images/drinkImg.jpg',
         name: '古道茶鄉',
         price: 60,
         rating: 4.7,
@@ -134,7 +132,7 @@ new Vue({
         link: '#'
       },
       {
-        img: '../assets/images/drinkImg.jpg',
+        img: './assets/images/drinkImg.jpg',
         name: '古道茶鄉',
         price: 60,
         rating: 4.7,
@@ -142,7 +140,7 @@ new Vue({
         link: '#'
       },
       {
-        img: '../assets/images/drinkImg.jpg',
+        img: './assets/images/drinkImg.jpg',
         name: '古道茶鄉',
         price: 60,
         rating: 4.7,
@@ -150,7 +148,7 @@ new Vue({
         link: '#'
       },
       {
-        img: '../assets/images/drinkImg.jpg',
+        img: './assets/images/drinkImg.jpg',
         name: '古道茶鄉',
         price: 60,
         rating: 4.7,
@@ -159,60 +157,100 @@ new Vue({
       }
     ],
     recommend: [{
-      photo: '../assets/images/photo1.png',
+      photo: './assets/images/photo1.png',
       name: 'Jomen',
       info: '到底是高單價的飲料好喝還是低單價的飲料好喝買買看就知道',
       link: '#'
     },
     {
-      photo: '../assets/images/photo2.png',
+      photo: './assets/images/photo2.png',
       name: '滴妹',
       info: '獨家配出了連再睡五分鐘都喝不到的配方，連哥哥都說好喝',
       link: '#'
     },
     {
-      photo: '../assets/images/photo3.png',
+      photo: './assets/images/photo3.png',
       name: 'HowHow',
       info: '°.°·(((p(≧□≦)q)))·°.°不買我也不會難過的ㄏ嗚嗚',
       link: '#'
-    }
-      ,
+    },
     {
-      photo: '../assets/images/photo4.png',
+      photo: './assets/images/photo4.png',
       name: '冷淡熊',
       info: '嗨，大家好〜在這裡我會給大家帶來搞笑，惡趣味的飲料〜',
-      link: '#'
+      link: 'celebrity_detail.html',
+      like: 99,
+      quantity: 3,
+      drink: [
+        {
+          img: './assets/images/drinkImg.jpg',
+          name: '冷淡茶',
+          price: 60,
+          rating: 4.7,
+          sell: 887,
+          link: '#',
+          good: true,
+        },
+        {
+          img: './assets/images/drinkImg.jpg',
+          name: '草莓熊',
+          price: 60,
+          rating: 4.7,
+          sell: 887,
+          link: '#',
+          good: true,
+        },
+        {
+          img: './assets/images/drinkImg.jpg',
+          name: '黑白熊',
+          price: 60,
+          rating: 4.7,
+          sell: 887,
+          link: '#',
+          good: false,
+        },
+      ]
     },
     {
-      photo: '../assets/images/photo1.png',
+      photo: './assets/images/photo1.png',
       name: 'Jomen',
       info: '到底是高單價的飲料好喝還是低單價的飲料好喝買買看就知道',
       link: '#'
     },
     {
-      photo: '../assets/images/photo1.png',
+      photo: './assets/images/photo1.png',
       name: 'Jomen',
       info: '到底是高單價的飲料好喝還是低單價的飲料好喝買買看就知道',
       link: '#'
     },
     {
-      photo: '../assets/images/photo1.png',
+      photo: './assets/images/photo1.png',
       name: 'Jomen',
       info: '到底是高單價的飲料好喝還是低單價的飲料好喝買買看就知道',
       link: '#'
     },]
   },
+  computed: {
+    noMore_recommender() {
+      return this.dispalay >= this.recommend.length
+    },
+    disabled_recommender() {
+      return this.loading || this.noMore_recommender
+    },
+    noMore_top_10() {
+      return this.dispalay >= this.tea.length
+    },
+    disabled_top_10() {
+      return this.loading || this.noMore_top_10
+    }
+  },
   methods: {
     load() {
-      let teaLen = this.tea.length
-      let recommendLen = this.recommend.length
-
-      if (this.dispalay < teaLen || this.dispalay < recommendLen) {
+      this.loading = true
+      setTimeout(() => {
         this.dispalay += 3
-      } else {
-        alert('nodata')
-      }
-
+        this.loading = false
+      }, 1000)
     },
   }
 })
