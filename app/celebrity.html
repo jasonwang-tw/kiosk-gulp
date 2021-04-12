@@ -11,29 +11,64 @@ engine: ejs
             <span>瞧瞧名人都喝啥</span>
         </el-divider>
     </div>
-    <el-row :gutter="30" class="infinite-list" infinite-scroll-disabled="disabled_recommender" v-infinite-scroll="load"
-        style="overflow:auto">
-        <el-col :span="24" v-for="(i, index) in recommend" class="infinite-list-item" v-if="index < dispalay">
+    <el-row :gutter="30" class="infinite-list" style="overflow:auto">
+        <el-col :span="24" class="infinite-list-item">
             <div class="grid-content recommendCard">
                 <div class="flex-space-between">
                     <div>
                         <div class="recommendPhoto">
-                            <img :src="i.photo" alt="">
+                            <img src="./assets/images/photo4.png" alt="">
                         </div>
                     </div>
                     <div class="recommendInfo">
-                        <div class="recommendName mb-2">{{i.name}}</div>
-                        <div class="recommendText">{{i.info}}</div>
+                        <div class="recommendName mb-2">冷淡熊</div>
+                        <div class="recommendText">嗨，大家好〜在這裡我會給大家帶來搞笑，惡趣味的飲料〜</div>
                     </div>
                     <div class="recommendBtn">
-                        <a :href="i.link">名人推薦</a>
+                        <a href="celebrity_detail.html">名人推薦</a>
+                    </div>
+                </div>
+            </div>
+        </el-col>
+        <el-col :span="24" class="infinite-list-item">
+            <div class="grid-content recommendCard">
+                <div class="flex-space-between">
+                    <div>
+                        <div class="recommendPhoto">
+                            <img src="./assets/images/photo1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="recommendInfo">
+                        <div class="recommendName mb-2">Jomen</div>
+                        <div class="recommendText">到底是高單價的飲料好喝還是低單價的飲料好喝買買看就知道〜</div>
+                    </div>
+                    <div class="recommendBtn">
+                        <a href="celebrity_detail.html">名人推薦</a>
+                    </div>
+                </div>
+            </div>
+        </el-col>
+        <el-col :span="24" class="infinite-list-item">
+            <div class="grid-content recommendCard">
+                <div class="flex-space-between">
+                    <div>
+                        <div class="recommendPhoto">
+                            <img src="./assets/images/photo4.png" alt="">
+                        </div>
+                    </div>
+                    <div class="recommendInfo">
+                        <div class="recommendName mb-2">冷淡熊</div>
+                        <div class="recommendText">嗨，大家好〜在這裡我會給大家帶來搞笑，惡趣味的飲料〜</div>
+                    </div>
+                    <div class="recommendBtn">
+                        <a href="celebrity_detail.html">名人推薦</a>
                     </div>
                 </div>
             </div>
         </el-col>
         <el-col :span="24">
-            <p v-if="loading"><i class="el-icon-loading mr-2"></i>讀取中...</p>
-            <p v-if="noMore_recommender">没有更多了</p>
+            <p><i class="el-icon-loading mr-2"></i>讀取中...</p>
+            <p>没有更多了</p>
         </el-col>
     </el-row>
 </div>

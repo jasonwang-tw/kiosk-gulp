@@ -12,52 +12,47 @@ engine: ejs
     </el-row>
     <el-row>
         <el-col :span="24">
-            <template v-for="(i, index) in recommend" :key="index" v-if="i.name === '冷淡熊'">
-                <div class="grid-content recommendCard">
-                    <div class="flex-space-between">
-                        <div>
-                            <div class="recommendPhoto">
-                                <img :src="i.photo" alt="">
-                            </div>
+            <div class="grid-content recommendCard">
+                <div class="flex-item-center">
+                    <div>
+                        <div class="recommendPhoto">
+                            <img src="./assets/images/photo4.png" alt="">
                         </div>
-                        <div class="recommendInfo">
-                            <div class="recommendName mb-2">{{i.name}}</div>
-                            <div class="recommendAssets mb-2">
-                                <div><i class="el-icon-user mr-2"></i>{{i.like}}關注</div>
-                                <div><i class="el-icon-milk-tea ml-2 mr-2"></i>已上架{{i.quantity}}種配方</div>
-                            </div>
-                            <div class="recommendText">{{i.info}}</div>
+                    </div>
+                    <div class="recommendInfo">
+                        <div class="recommendName mb-2">冷淡熊</div>
+                        <div class="recommendAssets mb-2">
+                            <div><i class="el-icon-user mr-2"></i>99關注</div>
+                            <div><i class="el-icon-milk-tea ml-2 mr-2"></i>已上架3種配方</div>
                         </div>
+                        <div class="recommendText">嗨，大家好〜在這裡我會給大家帶來搞笑，惡趣味的飲料〜</div>
                     </div>
                 </div>
-            </template>
+            </div>
         </el-col>
     </el-row>
-    <el-row :gutter="30" class="pt-5" infinite-scroll-disabled="disabled_recommender" v-infinite-scroll="load"
-        style="overflow:auto">
-        <template v-for="(item, index) in recommend" v-if="item.name === '冷淡熊'">
-            <el-col :span="8" class="infinite-list-item" v-for="(i, index) in item.drink" :key="index">
-                <a :href="i.link" class="grid-content drinkCard">
-                    <div class="badge" :class="{ goodDrink: i.good}"></div>
-                    <div class="drinkImg">
-                        <img :src="i.img" alt="">
+    <el-row :gutter="30" class="pt-5" style="overflow:auto">
+        <el-col :span="8" class="infinite-list-item">
+            <div class="grid-content drinkCard">
+                <div class="badge goodDrink"></div>
+                <div class="drinkImg">
+                    <img src="./assets/images/banner.jpg" alt="">
+                </div>
+                <div class="drinkInfo">
+                    <div class="flex-space-between mb-2">
+                        <div class="drinkName">冷淡茶</div>
+                        <div class="drinkPrice">$60</div>
                     </div>
-                    <div class="drinkInfo">
-                        <div class="flex-space-between mb-2">
-                            <div class="drinkName">{{i.name}}</div>
-                            <div class="drinkPrice">${{i.price}}</div>
-                        </div>
-                        <div class="flex-space-between">
-                            <div class="drinkRating"><i class="el-icon-star-on"></i>{{i.rating}}</div>
-                            <div class="drinkSell"><span class="type">已售出</span>{{i.sell}}</div>
-                        </div>
+                    <div class="flex-space-between">
+                        <div class="drinkRating"><i class="el-icon-star-on"></i>4.7</div>
+                        <div class="drinkSell"><span class="type">已售出</span>887</div>
                     </div>
-                </a>
-            </el-col>
-        </template>
+                </div>
+            </div>
+        </el-col>
         <el-col :span="24">
-            <p v-if="loading"><i class="el-icon-loading mr-2"></i>讀取中...</p>
-            <p v-if="noMore_recommender">没有更多了</p>
+            <p><i class="el-icon-loading mr-2"></i>讀取中...</p>
+            <p>没有更多了</p>
         </el-col>
     </el-row>
 </div>

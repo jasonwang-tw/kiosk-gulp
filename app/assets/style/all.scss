@@ -58,6 +58,11 @@ $orderActive: #fff0d8;
   -webkit-line-clamp: $number;
   -webkit-box-orient: vertical;
 }
+@mixin imgCover {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
 
 * {
   box-sizing: border-box;
@@ -115,7 +120,9 @@ img {
   color: $border !important;
   font-weight: 300;
 }
-
+:focus {
+  outline: none;
+}
 .btn-lg {
   @include btn-lg();
 }
@@ -123,6 +130,10 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.flex-item-center {
+  display: flex;
+  align-items: center;
 }
 .mb-2 {
   margin-bottom: 0.5rem;
@@ -158,25 +169,44 @@ img {
   }
 }
 
+// banner
+
+#banner {
+  .bannerImg {
+    height: 230px;
+    overflow: hidden;
+    img {
+      @include imgCover();
+    }
+  }
+}
+
 // topMenu
 
 #topMenu {
-  background-color: #f3f3f3;
-  display: flex;
-  padding: 0.8rem;
-  overflow-x: auto;
-  box-shadow: $shadow;
-  .menuItem {
-    flex-shrink: 0;
-    background-color: $white;
-    margin-right: 0.8rem;
-    @include btn-md();
-    @include animTime();
-  }
-  .active {
-    color: $white;
-    background-color: $sup;
-    @include animTime();
+  ul {
+    background-color: #f3f3f3;
+    display: flex;
+    padding: 1.2rem 0.8rem;
+    margin: 0;
+    overflow-x: auto;
+    box-shadow: $shadow;
+    .menuItem {
+      flex-shrink: 0;
+      background-color: $white;
+      margin-right: 0.8rem;
+      @include btn-md();
+      @include animTime();
+    }
+    li {
+      flex-shrink: 0;
+      list-style-type: none;
+    }
+    .active {
+      color: $white;
+      background-color: $sup;
+      @include animTime();
+    }
   }
 }
 
@@ -186,19 +216,16 @@ img {
   padding: 1rem;
 }
 
-.el-input__inner,
+.searchBar,
 .freeBtn {
   border-radius: 0.8rem;
   height: 80px;
   color: $border;
   border: 2px solid $border;
 }
-.el-input__inner {
+.searchBar {
+  width: 100%;
   padding: 1rem 80px;
-}
-.el-input.is-active .el-input__inner,
-.el-input__inner:focus {
-  border-color: $border;
 }
 .freeBtn {
   text-align: center;
@@ -213,7 +240,7 @@ img {
   position: absolute;
   font-size: 42px;
   color: $border;
-  margin: 15px 0 0 20px;
+  margin: -35px 0 0 20px;
 }
 
 // main
@@ -225,7 +252,7 @@ img {
 
 .pageTitle {
   text-align: center;
-  background-color: $border;
+  // background-color: $border;
   h1 {
     font-size: 50px;
     margin-bottom: 0;
@@ -270,8 +297,7 @@ img {
     overflow: hidden;
     border-radius: 1rem 1rem 0 0;
     img {
-      height: 100%;
-      object-fit: cover;
+      @include imgCover();
     }
   }
   .drinkName,
@@ -311,8 +337,7 @@ img {
     overflow: hidden;
     background-color: $line;
     img {
-      height: 100%;
-      object-fit: cover;
+      @include imgCover();
     }
   }
   .recommendAssets {

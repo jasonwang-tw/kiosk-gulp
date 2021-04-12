@@ -1,7 +1,10 @@
 <div id="topMenu">
-    <template v-for="(i, index) in menu">
-        <a :href="i.link" class="menuItem" :class="{ active: dataShare.active == index }" @click="active = index">
-            {{ i.name }}
-        </a>
-    </template>
+    <ul>
+        <li><a href="top10.html" class="menuItem active">熱銷排行TOP10</a></li>
+        <li><a href="" class="menuItem">優惠活動</a></li>
+        <li><a href="celebrity.html" class="menuItem">名人堂</a></li>
+        <li><a href="" class="menuItem">紅茶系列</a></li>
+        <li><a href="" class="menuItem">綠茶系列</a></li>
+        <li><a href="" class="menuItem">鮮奶茶系列</a></li>
+    </ul>
 </div>

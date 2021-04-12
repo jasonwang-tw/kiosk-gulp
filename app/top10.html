@@ -12,29 +12,64 @@ engine: ejs
             <span>流行趨勢及熱銷飲品</span>
         </el-divider>
     </div>
-    <el-row :gutter="30" class="infinite-list pt-5" infinite-scroll-disabled="disabled_top_10" v-infinite-scroll="load"
-        style="overflow:auto">
-        <el-col :span="8" v-for="(i, index) in tea" class="infinite-list-item" v-if="index < dispalay">
-            <a :href="i.link" class="grid-content drinkCard">
-                <div class="badge topDrink">{{ index + 1 }}</div>
+    <el-row :gutter="30" class="pt-5 infinite-list" style="overflow:auto">
+        <el-col :span="8" class="infinite-list-item">
+            <div class="grid-content drinkCard">
+                <div class="badge topDrink">1</div>
                 <div class="drinkImg">
-                    <img :src="i.img" alt="">
+                    <img src="./assets/images/banner.jpg" alt="">
                 </div>
                 <div class="drinkInfo">
-                    <div class="flex-space-between mb-2">
-                        <div class="drinkName">{{i.name}}</div>
-                        <div class="drinkPrice">${{i.price}}</div>
+                    <div class="mb-2 flex-space-between">
+                        <div class="drinkName">古道茶鄉</div>
+                        <div class="drinkPrice">$60</div>
                     </div>
                     <div class="flex-space-between">
-                        <div class="drinkRating"><i class="el-icon-star-on"></i>{{i.rating}}</div>
-                        <div class="drinkSell"><span class="type">已售出</span>{{i.sell}}</div>
+                        <div class="drinkRating"><i class="el-icon-star-on">4.7</i></div>
+                        <div class="drinkSell"><span class="type">已售出</span>887</div>
                     </div>
                 </div>
-            </a>
+            </div>
+        </el-col>
+        <el-col :span="8" class="infinite-list-item">
+            <div class="grid-content drinkCard">
+                <div class="badge topDrink">2</div>
+                <div class="drinkImg">
+                    <img src="./assets/images/banner.jpg" alt="">
+                </div>
+                <div class="drinkInfo">
+                    <div class="mb-2 flex-space-between">
+                        <div class="drinkName">古道茶鄉</div>
+                        <div class="drinkPrice">$60</div>
+                    </div>
+                    <div class="flex-space-between">
+                        <div class="drinkRating"><i class="el-icon-star-on">4.7</i></div>
+                        <div class="drinkSell"><span class="type">已售出</span>887</div>
+                    </div>
+                </div>
+            </div>
+        </el-col>
+        <el-col :span="8" class="infinite-list-item">
+            <div class="grid-content drinkCard">
+                <div class="badge topDrink">3</div>
+                <div class="drinkImg">
+                    <img src="./assets/images/banner.jpg" alt="">
+                </div>
+                <div class="drinkInfo">
+                    <div class="mb-2 flex-space-between">
+                        <div class="drinkName">古道茶鄉</div>
+                        <div class="drinkPrice">$60</div>
+                    </div>
+                    <div class="flex-space-between">
+                        <div class="drinkRating"><i class="el-icon-star-on"></i>4.7</div>
+                        <div class="drinkSell"><span class="type">已售出</span>887</div>
+                    </div>
+                </div>
+            </div>
         </el-col>
         <el-col :span="24">
-            <p v-if="loading"><i class="el-icon-loading mr-2"></i>讀取中...</p>
-            <p v-if="noMore_top_10">没有更多了</p>
+            <p><i class="el-icon-loading mr-2"></i>讀取中...</p>
+            <p>没有更多了</p>
         </el-col>
     </el-row>
 </div>
