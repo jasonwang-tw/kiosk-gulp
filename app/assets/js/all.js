@@ -3,6 +3,7 @@ new Vue({
   data: {}
 })
 
+
 new Vue({
   el: '#main',
   data: {
