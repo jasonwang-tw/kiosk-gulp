@@ -14,23 +14,22 @@
 
   <body>
     <div id="banner">
-    <el-carousel trigger="click" arrow="always" :autoplay="false" height="200px">
-        <el-carousel-item v-for="(item, index) in bannerItem">
-            <img :src="item.imgSrc" alt="" />
-        </el-carousel-item>
-    </el-carousel>
+    <div class="bannerImg"><img src="./assets/images/banner.jpg" alt="" /></div>
 </div>
       <div id="topMenu">
-    <template v-for="(i, index) in menu">
-        <a :href="i.link" class="menuItem" :class="{ active: dataShare.active == index }" @click="active = index">
-            {{ i.name }}
-        </a>
-    </template>
+    <ul>
+        <li><a href="top10.html" class="menuItem active">熱銷排行TOP10</a></li>
+        <li><a href="" class="menuItem">優惠活動</a></li>
+        <li><a href="celebrity.html" class="menuItem">名人堂</a></li>
+        <li><a href="" class="menuItem">紅茶系列</a></li>
+        <li><a href="" class="menuItem">綠茶系列</a></li>
+        <li><a href="" class="menuItem">鮮奶茶系列</a></li>
+    </ul>
 </div>
         <div id="search">
     <el-row :gutter="20" type="flex" align="middle">
         <el-col :span="18">
-            <el-input placeholder="搜尋飲品編號" v-model="searchKey" class="el-icon-search" placeholder="搜尋飲品編號"></el-input>
+            <i class="el-icon-search"></i><input type="text" name="" id="" placeholder="搜尋飲品編號" class="searchBar">
         </el-col>
         <el-col :span="6">
             <a href="#" class="freeBtn"><i class="el-icon-coffee"></i>自配方</a>
@@ -45,29 +44,64 @@
             <span>瞧瞧名人都喝啥</span>
         </el-divider>
     </div>
-    <el-row :gutter="30" class="infinite-list" infinite-scroll-disabled="disabled_recommender" v-infinite-scroll="load"
-        style="overflow:auto">
-        <el-col :span="24" v-for="(i, index) in recommend" class="infinite-list-item" v-if="index < dispalay">
+    <el-row :gutter="30" class="infinite-list" style="overflow:auto">
+        <el-col :span="24" class="infinite-list-item">
             <div class="grid-content recommendCard">
                 <div class="flex-space-between">
                     <div>
                         <div class="recommendPhoto">
-                            <img :src="i.photo" alt="">
+                            <img src="./assets/images/photo4.png" alt="">
                         </div>
                     </div>
                     <div class="recommendInfo">
-                        <div class="recommendName mb-2">{{i.name}}</div>
-                        <div class="recommendText">{{i.info}}</div>
+                        <div class="recommendName mb-2">冷淡熊</div>
+                        <div class="recommendText">嗨，大家好〜在這裡我會給大家帶來搞笑，惡趣味的飲料〜</div>
                     </div>
                     <div class="recommendBtn">
-                        <a :href="i.link">名人推薦</a>
+                        <a href="celebrity_detail.html">名人推薦</a>
+                    </div>
+                </div>
+            </div>
+        </el-col>
+        <el-col :span="24" class="infinite-list-item">
+            <div class="grid-content recommendCard">
+                <div class="flex-space-between">
+                    <div>
+                        <div class="recommendPhoto">
+                            <img src="./assets/images/photo1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="recommendInfo">
+                        <div class="recommendName mb-2">Jomen</div>
+                        <div class="recommendText">到底是高單價的飲料好喝還是低單價的飲料好喝買買看就知道〜</div>
+                    </div>
+                    <div class="recommendBtn">
+                        <a href="celebrity_detail.html">名人推薦</a>
+                    </div>
+                </div>
+            </div>
+        </el-col>
+        <el-col :span="24" class="infinite-list-item">
+            <div class="grid-content recommendCard">
+                <div class="flex-space-between">
+                    <div>
+                        <div class="recommendPhoto">
+                            <img src="./assets/images/photo4.png" alt="">
+                        </div>
+                    </div>
+                    <div class="recommendInfo">
+                        <div class="recommendName mb-2">冷淡熊</div>
+                        <div class="recommendText">嗨，大家好〜在這裡我會給大家帶來搞笑，惡趣味的飲料〜</div>
+                    </div>
+                    <div class="recommendBtn">
+                        <a href="celebrity_detail.html">名人推薦</a>
                     </div>
                 </div>
             </div>
         </el-col>
         <el-col :span="24">
-            <p v-if="loading"><i class="el-icon-loading mr-2"></i>讀取中...</p>
-            <p v-if="noMore_recommender">没有更多了</p>
+            <p><i class="el-icon-loading mr-2"></i>讀取中...</p>
+            <p>没有更多了</p>
         </el-col>
     </el-row>
 </div>
