@@ -14,7 +14,8 @@ engine: ejs
     </div>
     <el-row :gutter="30" class="pt-5 infinite-list" style="overflow:auto">
         <el-col :span="8" class="infinite-list-item">
-            <div class="grid-content drinkCard">
+            <!-- 點擊 @click 開啟 popup -->
+            <div class="grid-content drinkCard" @click="popuphide = false">
                 <div class="badge topDrink">1</div>
                 <div class="drinkImg">
                     <img src="./assets/images/banner.jpg" alt="">
@@ -44,7 +45,7 @@ engine: ejs
                     </div>
                     <div class="flex-space-between">
                         <div class="drinkRating"><i class="el-icon-star-on">4.7</i></div>
-                        <div class="drinkSell"><span class="type">已售出</span>887</div>
+                        <div class="drinkSell"><span class="type">已售出</span>8k</div>
                     </div>
                 </div>
             </div>
