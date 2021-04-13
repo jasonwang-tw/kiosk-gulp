@@ -105,6 +105,121 @@
         </el-col>
     </el-row>
 </div>
+              <!-- popuphide 控制 class: popupHide -->
+<div class="fixedBg" :class="{popupHide:popuphide}">
+    <div id="drinkDetail">
+        <!-- 點擊 @click 關閉 popup -->
+        <div class="detailClose" @click="popuphide = true"><i class="el-icon-close"></i></div>
+        <el-row :gutter="50">
+            <el-col :span="12">
+                <div class="drinkPhoto">
+                    <img src="./assets/images/drinkPhoto.png" alt="">
+                </div>
+            </el-col>
+            <el-col :span="12">
+                <div class="drinkDetailInfo">
+                    <h2 class="infoName">東方不敗</h2>
+                    <h2 class="infoPrice">$60</h2>
+                    <div class="infoData flex-item-center">
+                        <div><i class="el-icon-star-on"></i>4.5</div>
+                        <div class="sell"><span>已售出</span> 4,998</div>
+                    </div>
+                    <div class="infood">內含配料</div>
+                    <div>粉圓、布丁、紅豆</div>
+                    <div class="infoNumber">飲料編號 12345678</div>
+                </div>
+            </el-col>
+        </el-row>
+        <el-row>
+            <el-col :span="24">
+                <hr>
+                <h3>飲品介紹</h3>
+                <div class="drinkText">
+                    <p>特製的紅茶搭配契作的柳營鮮乳，口感滑順、奶香醇厚。 可選擇搭配紅茶：伯爵紅茶、台灣靛紅。特製的台灣純綠搭配契作的柳營鮮乳，口感滑順、奶香醇厚。</p>
+                </div>
+                <hr>
+                <div class="drinkChoose flex-item-center">
+                    <div class="mr-2 drinkType"><span>*</span>容量</div>
+                    <div class="flex-item-center">
+                        <input type="radio" name="cup" id="medium" checked>
+                        <label for="medium">中杯</label>
+                    </div>
+                    <div class="flex-item-center">
+                        <input type="radio" name="cup" id="large">
+                        <label for="large">大杯</label>
+                    </div>
+                </div>
+                <div class="drinkChoose flex-item-center">
+                    <div class="mr-2 drinkType"><span>*</span>甜度</div>
+                    <div class="flex-item-center">
+                        <input type="radio" name="sugar" id="sugar_no" checked>
+                        <label for="no">無糖</label>
+                    </div>
+                    <div class="flex-item-center">
+                        <input type="radio" name="sugar" id="sugar_3">
+                        <label for="sugar_3">三分</label>
+                    </div>
+                    <div class="flex-item-center">
+                        <input type="radio" name="sugar" id="sugar_5">
+                        <label for="sugar_5">半分</label>
+                    </div>
+                    <div class="flex-item-center">
+                        <input type="radio" name="sugar" id="sugar_7">
+                        <label for="sugar_7">七分</label>
+                    </div>
+                    <div class="flex-item-center">
+                        <input type="radio" name="sugar" id="sugar_10">
+                        <label for="sugar_10">正常</label>
+                    </div>
+                </div>
+                <div class="drinkChoose flex-item-center">
+                    <div class="mr-2 drinkType"><span>*</span>溫度</div>
+                    <div class="flex-item-center">
+                        <input type="radio" name="temp" id="cold" checked>
+                        <label for="cold">冷飲</label>
+                    </div>
+                    <div class="flex-item-center">
+                        <input type="radio" name="temp" id="normal">
+                        <label for="normal">常溫</label>
+                    </div>
+                    <div class="flex-item-center">
+                        <input type="radio" name="temp" id="hot">
+                        <label for="hot">熱飲</label>
+                    </div>
+                </div>
+                <div class="drinkChoose flex-item-center">
+                    <div class="mr-2 drinkType"><span>*</span>冰塊</div>
+                    <div class="flex-item-center">
+                        <input type="radio" name="ice" id="ice_no" checked>
+                        <label for="ice_no">去冰</label>
+                    </div>
+                    <div class="flex-item-center">
+                        <input type="radio" name="ice" id="ice_3">
+                        <label for="ice_3">微冰</label>
+                    </div>
+                    <div class="flex-item-center">
+                        <input type="radio" name="ice" id="ice_5">
+                        <label for="ice_5">少冰</label>
+                    </div>
+                    <div class="flex-item-center">
+                        <input type="radio" name="ice" id="ice_10">
+                        <label for="ice_10">正常</label>
+                    </div>
+                </div>
+                <div class="drinkChoose flex-item-center">
+                    <div class="mr-2 drinkType"><span>*</span>數量</div>
+                    <div><i class="el-icon-minus"></i></div>
+                    <div><input type="number" name="" id="" value="1"></div>
+                    <div><i class="el-icon-plus"></i></div>
+                </div>
+                <div class="drinkBuy flex-center">
+                    <div class="addCart mr-2">放入購物籃</div>
+                    <div class="checkOut">直接結帳</div>
+                </div>
+            </el-col>
+        </el-row>
+    </div>
+</div>
           </div>
           <div id="checkoutBar" class="flex-space-between ">
     <div>總計<span>6</span>項，共<span>$325</span></div>
