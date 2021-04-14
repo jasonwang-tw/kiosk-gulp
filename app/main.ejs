@@ -8,7 +8,11 @@
         <%- include('./component/search') %>
           <div id="main">
             <%- contents %>
-              <%- include('./component/drink_detail') %>
+              <!-- popuphide 控制 class: popupHide -->
+              <div class="fixedBg">
+                <%- include('./component/free_drink') %>
+                  <%- include('./component/drink_detail') %>
+              </div>
           </div>
           <%- include('./component/checkoutBar') %>
             <footer>

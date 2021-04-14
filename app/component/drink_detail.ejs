@@ -1,8 +1,7 @@
-<!-- popuphide 控制 class: popupHide -->
-<div class="fixedBg" :class="{popupHide:popuphide}">
-    <div id="drinkDetail">
-        <!-- 點擊 @click 關閉 popup -->
-        <div class="detailClose" @click="popuphide = true"><i class="el-icon-close"></i></div>
+<div id="drinkDetail" class="popup" :class="{popupHide:popuphide}">
+    <!-- 點擊 @click 關閉 popup -->
+    <div class="popupClose" @click="popuphide = true"><i class="el-icon-close"></i></div>
+    <div class="popupContent">
         <el-row :gutter="50">
             <el-col :span="12">
                 <div class="drinkPhoto">
@@ -29,6 +28,8 @@
                 <h3>飲品介紹</h3>
                 <div class="drinkText">
                     <p>特製的紅茶搭配契作的柳營鮮乳，口感滑順、奶香醇厚。 可選擇搭配紅茶：伯爵紅茶、台灣靛紅。特製的台灣純綠搭配契作的柳營鮮乳，口感滑順、奶香醇厚。</p>
+                    <p>特製的紅茶搭配契作的柳營鮮乳，口感滑順、奶香醇厚。 可選擇搭配紅茶：伯爵紅茶、台灣靛紅。特製的台灣純綠搭配契作的柳營鮮乳，口感滑順、奶香醇厚。</p>
+                    <p>特製的紅茶搭配契作的柳營鮮乳，口感滑順、奶香醇厚。 可選擇搭配紅茶：伯爵紅茶、台灣靛紅。特製的台灣純綠搭配契作的柳營鮮乳，口感滑順、奶香醇厚。</p>
                 </div>
                 <hr>
                 <div class="drinkChoose flex-item-center">
@@ -46,7 +47,7 @@
                     <div class="mr-2 drinkType"><span>*</span>甜度</div>
                     <div class="flex-item-center">
                         <input type="radio" name="sugar" id="sugar_no" checked>
-                        <label for="no">無糖</label>
+                        <label for="sugar_no">無糖</label>
                     </div>
                     <div class="flex-item-center">
                         <input type="radio" name="sugar" id="sugar_3">
