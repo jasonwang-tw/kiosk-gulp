@@ -1,3 +1,4 @@
+<!-- free_drink -->
 <div id="freeDrink" class="popup" :class="{popupHide:data_share.free_drink_hide}">
     <!-- 點擊 @click 關閉 popup -->
     <div class="popupClose" @click="data_share.popuphide = true, data_share.free_drink_hide = true"><i
@@ -8,13 +9,14 @@
             <p>在此製作配方只能一次性調配，無法儲存重複使用，<br>如想重複使用請至配配飲官網</p>
         </div>
         <hr>
-        <h3 class="mb-0">選擇容量*</h3><br>
+        <h3 class="mb-0">選擇容量<span class="text-notice">*</span></h3><br>
         <div class="drinkChoose text-center">
             <input type="radio" name="free_cup" id="medium" checked>
             <label for="medium">中杯</label>
             <input type="radio" name="free_cup" id="large">
             <label for="large">大杯</label>
         </div>
+        <!-- 進度條 -->
         <div class="drinkProgress">
             <div class="flex-space-between">
                 <div class="text-center">
@@ -39,6 +41,7 @@
                 </div>
             </div>
         </div>
+        <!-- 增加選項 -->
         <div class="tea-content">
             <div class="flex-item-center">
                 <h3 class="mr-2">選擇茶底<span class="text-notice">*</span></h3>
@@ -137,6 +140,7 @@
             <div class="add-ingredients"><i class="el-icon-plus mr-2"></i>增加配料</div>
         </div>
         <hr>
+        <!-- 總計 -->
         <div class="ingredients-total flex-item-center">
             <h3>食材費總計</h3>
             <h3 class="text-notice">$90</h3>

@@ -1,3 +1,4 @@
+<!-- free_open -->
 <div id="freeOpen" class="popup popup-blue" :class="{popupHide:data_share.free_open_hide}">
     <!-- 點擊 @click 關閉 popup -->
     <div class="popupClose" @click="data_share.popuphide = true, data_share.free_open_hide = true"><i
@@ -5,7 +6,7 @@
     <div class="popupContent text-center">
         <h3 class="text-white">開啟自配方功能</h3>
         <hr class="border-white">
-        <!-- 暫時 -->
+        <!-- 暫時 @click-->
         <div @click="data_share.free_open_hide = true, data_share.free_ok_hide = false">
             <img src="../../assets/images/qr-code.png" alt="" srcset="">
         </div>
