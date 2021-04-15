@@ -25,11 +25,11 @@ $orderActive: #fff0d8;
   padding: 1rem 3rem;
 }
 
-@mixin input($t-color: $border, $b-Color: $border) {
-  border-radius: 0.8rem;
+@mixin input($t-color: $border, $b-color: $border, $round: 0.8rem) {
+  border-radius: $round;
   height: 80px;
   color: $t-color;
-  border: 2px solid $border;
+  border: 2px solid $b-color;
   width: 100%;
 }
 
@@ -56,8 +56,8 @@ $orderActive: #fff0d8;
   transition-duration: 0.2s;
 }
 
-@mixin round-border($px: 2px, $status: hidden) {
-  border-radius: 1rem;
+@mixin round-border($px: 2px, $status: hidden, $round: 1rem) {
+  border-radius: $round;
   overflow: $status;
   border: $px solid $line-blue;
 }
@@ -107,8 +107,13 @@ a {
 input,
 input[type="text"],
 button,
+select,
+textarea,
 i {
   font-size: 1rem;
+}
+option {
+  font-size: 0.4rem;
 }
 input {
   &[type="text"],
@@ -117,6 +122,17 @@ input {
     @include input();
   }
 }
+select {
+  width: 100%;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-size: 20px auto;
+  background-position: calc(100% - 20px) center;
+  background-image: url("../images/selectDownArrow.svg");
+  padding: 0 0.5rem;
+  @include input($t-color: $main, $b-color: $line-blue, $round: 0.5rem);
+}
+
 h1,
 h2,
 h3,
@@ -149,6 +165,12 @@ img {
 :focus {
   outline: none;
 }
+.btn-sm {
+  @include btn-sm();
+}
+.btn-md {
+  @include btn-md();
+}
 .btn-lg {
   @include btn-lg();
 }
@@ -174,6 +196,9 @@ img {
   display: flex;
   align-items: center;
 }
+.mb-0 {
+  margin-bottom: 0;
+}
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -189,8 +214,43 @@ img {
 .pt-5 {
   padding-top: 1.25rem;
 }
+.text-center {
+  text-align: center;
+}
+
+.text-main {
+  color: $main;
+}
+.text-sup {
+  color: $sup;
+}
+.text-border {
+  color: $border;
+}
+.text-sup-blue {
+  color: $text-sup;
+}
+.text-line-blue {
+  color: $line-blue;
+}
+.text-notice {
+  color: $notice;
+}
+.text-white {
+  color: $white;
+}
+.text-lg {
+  font-size: 1.2rem;
+}
+.text-sm {
+  font-size: 0.8rem;
+}
+.border-white {
+  border-color: $white;
+}
 
 // star
+
 .home {
   height: 100%;
   background-image: url("../images/index.jpg");
@@ -482,64 +542,146 @@ img {
   .drinkText * {
     color: $text-sup;
   }
-  .drinkChoose {
-    margin-bottom: 1rem;
-    .drinkType {
-      color: $sup;
-      span {
-        color: $notice;
-        margin-right: 0.25rem;
-      }
-    }
-    input:not(input[type="number"]) {
-      display: none;
-    }
-    input[type="number"] {
-      border-radius: 99px;
-      border-color: $line-blue;
-      text-align: center;
-      width: 150px;
-      margin: 0 0.5rem;
-      color: $main;
-    }
-    label {
-      @include round-border();
-      @include btn-sm();
-      display: inline-block;
-      margin-right: 0.5rem;
-      color: $line-blue;
-    }
-    i[class*="el-icon"] {
-      border-radius: 99px;
-      color: $white;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: $line-blue;
-    }
-    input[type="radio"]:checked + label {
-      background-color: $main;
-      color: $white;
+}
+
+.drinkChoose {
+  margin-bottom: 1rem;
+  .drinkType {
+    color: $sup;
+    span {
+      color: $notice;
+      margin-right: 0.25rem;
     }
   }
-  .drinkBuy {
-    padding-top: 1rem;
-    font-size: 1.2rem;
-    .addCart,
-    .checkOut {
-      @include btn-md();
-      width: 350px;
+  input:not(input[type="number"]) {
+    display: none;
+  }
+  input[type="number"] {
+    border-radius: 99px;
+    border-color: $line-blue;
+    text-align: center;
+    width: 150px;
+    margin: 0 0.5rem;
+    color: $main;
+  }
+  label {
+    @include round-border();
+    @include btn-sm();
+    display: inline-block;
+    margin-right: 0.5rem;
+    color: $line-blue;
+  }
+  i[class*="el-icon"] {
+    border-radius: 99px;
+    color: $white;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $line-blue;
+  }
+  input[type="radio"]:checked + label {
+    background-color: $main;
+    color: $white;
+  }
+}
+.drinkBuy {
+  padding-top: 1rem;
+  font-size: 1.2rem;
+  .addCart,
+  .checkOut {
+    @include btn-md();
+    width: 390px;
+    text-align: center;
+    color: $white;
+  }
+  .addCart {
+    background-color: $border;
+  }
+  .checkOut {
+    background-color: $sup;
+  }
+}
+
+.drinkProgress {
+  width: 80%;
+  padding-bottom: 5rem;
+  margin: 0 auto;
+  img {
+    width: 70px;
+  }
+  .progress {
+    width: 100%;
+    height: 16px;
+    border-radius: 99px;
+    background-color: $line-blue;
+    .progressBar {
+      width: 60%;
+      height: 100%;
+      border-radius: 99px;
+      position: relative;
+      background-color: $main;
+    }
+    .barValue {
+      top: 30px;
+      right: -40px;
+      position: absolute;
       text-align: center;
-      color: $white;
+      i:before {
+        content: "▲";
+      }
     }
-    .addCart {
-      background-color: $border;
+  }
+}
+
+.tea-content {
+  .ingredients-title {
+    div {
+      @extend .text-line-blue;
     }
-    .checkOut {
-      background-color: $sup;
+    div:first-child {
+      flex-basis: calc(80% - 17px);
     }
+  }
+  .cup-content {
+    margin-bottom: 0.5rem;
+    div {
+      text-align: center;
+      flex-basis: 26.666%;
+      margin-right: 0.5rem;
+    }
+    .ingredients-price,
+    .ingredients-del {
+      flex-basis: 10%;
+      @extend .text-notice;
+    }
+  }
+  .add-ingredients {
+    @include btn-sm();
+    @include round-border($round: 0.5rem);
+    display: inline-block;
+    color: $border;
+    border-color: $border;
+  }
+}
+
+.ingredients-total {
+  h3 {
+    margin: 0;
+  }
+  h3:first-child {
+    flex-basis: calc(80% - 5px);
+  }
+}
+
+// free drink
+
+.freeDrink_title {
+  p {
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    color: $border;
   }
 }
 
@@ -556,6 +698,7 @@ img {
   @include flex-center();
   background-color: rgba(0, 0, 0, 0.2);
 }
+
 .popup {
   padding: 1rem;
   width: 90%;
@@ -581,6 +724,16 @@ img {
     i {
       font-size: 1.5rem;
     }
+  }
+}
+
+.popup-blue {
+  height: auto;
+  background-color: $border;
+  .btn {
+    background-color: $sup;
+    width: 60%;
+    margin: 2rem auto;
   }
 }
 .popupHide {

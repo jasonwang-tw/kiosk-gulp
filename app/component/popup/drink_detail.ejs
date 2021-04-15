@@ -1,6 +1,7 @@
-<div id="drinkDetail" class="popup" :class="{popupHide:popuphide}">
+<div id="drinkDetail" class="popup" :class="{popupHide:data_share.drink_detail_hide}">
     <!-- 點擊 @click 關閉 popup -->
-    <div class="popupClose" @click="popuphide = true"><i class="el-icon-close"></i></div>
+    <div class="popupClose" @click="data_share.popuphide = true, data_share.drink_detail_hide = true"><i
+            class="el-icon-close"></i></div>
     <div class="popupContent">
         <el-row :gutter="50">
             <el-col :span="12">

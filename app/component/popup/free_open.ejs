@@ -1,0 +1,14 @@
+<div id="freeOpen" class="popup popup-blue" :class="{popupHide:data_share.free_open_hide}">
+    <!-- 點擊 @click 關閉 popup -->
+    <div class="popupClose" @click="data_share.popuphide = true, data_share.free_open_hide = true"><i
+            class="el-icon-close"></i></div>
+    <div class="popupContent text-center">
+        <h3 class="text-white">開啟自配方功能</h3>
+        <hr class="border-white">
+        <!-- 暫時 -->
+        <div @click="data_share.free_open_hide = true, data_share.free_ok_hide = false">
+            <img src="../../assets/images/qr-code.png" alt="" srcset="">
+        </div>
+        <p class="text-lg text-white">請把QR-code拿到感應機前掃描</p>
+    </div>
+</div>
