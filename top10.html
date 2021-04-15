@@ -32,6 +32,7 @@
             <i class="el-icon-search"></i><input type="text" name="" id="" placeholder="搜尋飲品編號" class="searchBar">
         </el-col>
         <el-col :span="6">
+            <!-- 開啟自配方 -->
             <div class="freeBtn" @click="data_share.popuphide = false,data_share.free_open_hide = false"><i
                     class="el-icon-coffee"></i>自配方</div>
         </el-col>
@@ -48,7 +49,7 @@
     </div>
     <el-row :gutter="30" class="pt-5 infinite-list" style="overflow:auto">
         <el-col :span="8" class="infinite-list-item">
-            <!-- 點擊 @click 開啟 popup -->
+            <!-- 點擊開啟 drink_detail -->
             <div class="grid-content drinkCard"
                 @click="data_share.popuphide = false, data_share.drink_detail_hide = false">
                 <div class="badge topDrink">1</div>
@@ -111,7 +112,8 @@
 </div>
               <!-- popuphide 控制 class: popupHide -->
               <div class="fixedBg" :class="{popupHide:data_share.popuphide}">
-                <div id="freeOpen" class="popup popup-blue" :class="{popupHide:data_share.free_open_hide}">
+                <!-- free_open -->
+<div id="freeOpen" class="popup popup-blue" :class="{popupHide:data_share.free_open_hide}">
     <!-- 點擊 @click 關閉 popup -->
     <div class="popupClose" @click="data_share.popuphide = true, data_share.free_open_hide = true"><i
             class="el-icon-close"></i></div>
@@ -125,7 +127,8 @@
         <p class="text-lg text-white">請把QR-code拿到感應機前掃描</p>
     </div>
 </div>
-                  <div id="freeOk" class="popup popup-blue" :class="{popupHide:data_share.free_ok_hide}">
+                  <!-- free_ok -->
+<div id="freeOk" class="popup popup-blue" :class="{popupHide:data_share.free_ok_hide}">
     <!-- 點擊 @click 關閉 popup -->
     <div class="popupContent text-center">
         <h3 class="text-white">開啟自配方功能</h3>
@@ -138,7 +141,8 @@
             @click="data_share.free_ok_hide = true, data_share.free_drink_hide = false">開始使用</div>
     </div>
 </div>
-                    <div id="freeDrink" class="popup" :class="{popupHide:data_share.free_drink_hide}">
+                    <!-- free_drink -->
+<div id="freeDrink" class="popup" :class="{popupHide:data_share.free_drink_hide}">
     <!-- 點擊 @click 關閉 popup -->
     <div class="popupClose" @click="data_share.popuphide = true, data_share.free_drink_hide = true"><i
             class="el-icon-close"></i></div>
@@ -155,6 +159,7 @@
             <input type="radio" name="free_cup" id="large">
             <label for="large">大杯</label>
         </div>
+        <!-- 進度條 -->
         <div class="drinkProgress">
             <div class="flex-space-between">
                 <div class="text-center">
@@ -179,6 +184,7 @@
                 </div>
             </div>
         </div>
+        <!-- 增加選項 -->
         <div class="tea-content">
             <div class="flex-item-center">
                 <h3 class="mr-2">選擇茶底<span class="text-notice">*</span></h3>
@@ -277,6 +283,7 @@
             <div class="add-ingredients"><i class="el-icon-plus mr-2"></i>增加配料</div>
         </div>
         <hr>
+        <!-- 總計 -->
         <div class="ingredients-total flex-item-center">
             <h3>食材費總計</h3>
             <h3 class="text-notice">$90</h3>
@@ -352,7 +359,8 @@
         </div>
     </div>
 </div>
-                      <div id="drinkDetail" class="popup" :class="{popupHide:data_share.drink_detail_hide}">
+                      <!-- drink_detail -->
+<div id="drinkDetail" class="popup" :class="{popupHide:data_share.drink_detail_hide}">
     <!-- 點擊 @click 關閉 popup -->
     <div class="popupClose" @click="data_share.popuphide = true, data_share.drink_detail_hide = true"><i
             class="el-icon-close"></i></div>
