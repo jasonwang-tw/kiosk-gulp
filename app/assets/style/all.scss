@@ -704,9 +704,10 @@ img {
 // navigation
 
 #navigation {
-  background-color: $white;
   padding: 1.5rem;
   box-shadow: $shadow;
+  background-color: $white;
+  position: relative;
   a {
     position: absolute;
   }
