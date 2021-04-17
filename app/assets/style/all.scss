@@ -2,6 +2,7 @@ $main: #070150;
 $sup: #f39519;
 $notice: #f56c6c;
 $border: #57c4e5;
+$light-blue: #f3f8ff;
 $line: #d9e9fe;
 $line-blue: #afc8e9;
 $text-sup: #336699;
@@ -196,6 +197,9 @@ img {
   display: flex;
   align-items: center;
 }
+.mt-2 {
+  margin-top: 0.5rem;
+}
 .mb-0 {
   margin-bottom: 0;
 }
@@ -339,7 +343,7 @@ img {
 
 // main
 #main {
-  padding: 1rem 2rem;
+  padding: 1rem;
 }
 
 // top10
@@ -639,21 +643,27 @@ img {
   .ingredients-title {
     div {
       @extend .text-line-blue;
+      padding-right: 0.5rem;
     }
     div:first-child {
-      flex-basis: calc(80% - 17px);
+      flex-basis: 75%;
+    }
+    .position-price,
+    .position-remove {
+      text-align: center;
+      flex-basis: 12.5%;
     }
   }
   .cup-content {
     margin-bottom: 0.5rem;
     div {
       text-align: center;
-      flex-basis: 26.666%;
-      margin-right: 0.5rem;
+      flex-basis: 25%;
+      padding-right: 0.5rem;
     }
     .ingredients-price,
     .ingredients-del {
-      flex-basis: 10%;
+      flex-basis: 12.5%;
       @extend .text-notice;
     }
   }
@@ -669,9 +679,15 @@ img {
 .ingredients-total {
   h3 {
     margin: 0;
+    padding-right: 0.5rem;
   }
   h3:first-child {
-    flex-basis: calc(80% - 5px);
+    flex-basis: 75%;
+  }
+  .position-price,
+  .position-remove {
+    text-align: center;
+    flex-basis: 12.5%;
   }
 }
 
@@ -682,6 +698,56 @@ img {
     font-size: 0.8rem;
     line-height: 1.2rem;
     color: $border;
+  }
+}
+
+// navigation
+
+#navigation {
+  background-color: $white;
+  padding: 1.5rem;
+  box-shadow: $shadow;
+  a {
+    position: absolute;
+  }
+  h2 {
+    margin: 0;
+  }
+}
+.buyList {
+  padding: 1rem;
+  background-color: $white;
+  @include round-border();
+  .buyItem {
+    list-style-type: none;
+  }
+  .buyItem:not(:last-child) {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid $line-blue;
+  }
+}
+.drinkItem {
+  .itemImg {
+    width: 240px;
+    height: 240px;
+    flex-shrink: 0;
+    margin-right: 1rem;
+    @include round-border($px: 0px);
+    img {
+      object-fit: cover;
+    }
+  }
+  .itemDetail {
+    width: 100%;
+    h3 {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0.5rem 0;
+    }
+  }
+  .drinkChoose {
+    margin-bottom: 0;
   }
 }
 
