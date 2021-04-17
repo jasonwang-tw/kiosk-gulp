@@ -646,10 +646,11 @@ img {
   color: #57c4e5; }
 
 #navigation {
-  background-color: white;
   padding: 1.5rem;
   -webkit-box-shadow: 0 0 20px rgba(0, 16, 165, 0.2);
-          box-shadow: 0 0 20px rgba(0, 16, 165, 0.2); }
+          box-shadow: 0 0 20px rgba(0, 16, 165, 0.2);
+  background-color: white;
+  position: relative; }
   #navigation a {
     position: absolute; }
   #navigation h2 {
