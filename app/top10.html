@@ -1,6 +1,6 @@
 ---
 title: Kiosk
-layout: ./app/main.ejs
+layout: ./app/template/main.ejs
 engine: ejs
 <!-- current: index -->
 ---
@@ -15,8 +15,7 @@ engine: ejs
     <el-row :gutter="30" class="pt-5 infinite-list" style="overflow:auto">
         <el-col :span="8" class="infinite-list-item">
             <!-- 點擊開啟 drink_detail -->
-            <div class="grid-content drinkCard"
-                @click="data_share.popuphide = false, data_share.drink_detail_hide = false">
+            <div class="grid-content drinkCard" @click="share.popuphide = false, share.drink_detail_hide = false">
                 <div class="badge topDrink">1</div>
                 <div class="drinkImg">
                     <img src="./assets/images/banner.jpg" alt="">
