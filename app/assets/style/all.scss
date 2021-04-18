@@ -21,9 +21,9 @@ $orderActive: #fff0d8;
   padding: 0.7rem 1.2rem;
 }
 
-@mixin btn-lg {
+@mixin btn-lg($py: 1.2rem) {
   border-radius: 99px;
-  padding: .7rem 3rem;
+  padding: $py 3rem;
 }
 
 @mixin input($t-color: $border, $b-color: $border, $round: 0.8rem) {
@@ -814,7 +814,7 @@ img {
   div,
   a {
     color: $white;
-    @include btn-lg();
+    @include btn-lg($py: 0.7rem);
   }
   .orderAfterRemove {
     background-color: $line-blue;
