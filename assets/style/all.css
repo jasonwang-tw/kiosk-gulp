@@ -112,7 +112,7 @@ img {
 
 .btn-lg {
   border-radius: 99px;
-  padding: .7rem 3rem; }
+  padding: 1.2rem 3rem; }
 
 .flex-space-between {
   display: -webkit-box;
@@ -248,7 +248,7 @@ img {
   -webkit-box-shadow: 0 0 20px rgba(0, 16, 165, 0.2);
           box-shadow: 0 0 20px rgba(0, 16, 165, 0.2);
   border-radius: 99px;
-  padding: .7rem 3rem; }
+  padding: 1.2rem 3rem; }
 
 #banner .bannerImg {
   height: 230px;
@@ -727,7 +727,7 @@ img {
 .orderContent .orderNumber {
   display: block;
   border-radius: 99px;
-  padding: .7rem 3rem;
+  padding: 1.2rem 3rem;
   border-radius: 1rem;
   overflow: hidden;
   border: 2px solid #57c4e5; }
@@ -760,7 +760,7 @@ img {
   .btnGroup a {
     color: white;
     border-radius: 99px;
-    padding: .7rem 3rem; }
+    padding: 0.7rem 3rem; }
   .btnGroup .orderAfterRemove {
     background-color: #afc8e9;
     margin-right: 2rem; }
