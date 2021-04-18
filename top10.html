@@ -33,12 +33,12 @@
         </el-col>
         <el-col :span="6">
             <!-- 開啟自配方 -->
-            <div class="freeBtn" @click="data_share.popuphide = false,data_share.free_open_hide = false"><i
+            <div class="freeBtn" @click="share.popuphide = false,share.free_open_hide = false"><i
                     class="el-icon-coffee"></i>自配方</div>
         </el-col>
     </el-row>
 </div>
-          <div id="main">
+          <div id="main" class="listPage">
             
 <div id="top-10" class="mainIndex" data-index="0">
     <div class="pageTitle">
@@ -50,8 +50,7 @@
     <el-row :gutter="30" class="pt-5 infinite-list" style="overflow:auto">
         <el-col :span="8" class="infinite-list-item">
             <!-- 點擊開啟 drink_detail -->
-            <div class="grid-content drinkCard"
-                @click="data_share.popuphide = false, data_share.drink_detail_hide = false">
+            <div class="grid-content drinkCard" @click="share.popuphide = false, share.drink_detail_hide = false">
                 <div class="badge topDrink">1</div>
                 <div class="drinkImg">
                     <img src="./assets/images/banner.jpg" alt="">
@@ -111,24 +110,24 @@
     </el-row>
 </div>
               <!-- popuphide 控制 class: popupHide -->
-              <div class="fixedBg" :class="{popupHide:data_share.popuphide}">
+              <div class="fixedBg" :class="{popupHide:share.popuphide}">
                 <!-- free_open -->
-<div id="freeOpen" class="popup popup-blue" :class="{popupHide:data_share.free_open_hide}">
+<div id="freeOpen" class="popup popup-blue" :class="{popupHide:share.free_open_hide}">
     <!-- 點擊 @click 關閉 popup -->
-    <div class="popupClose" @click="data_share.popuphide = true, data_share.free_open_hide = true"><i
-            class="el-icon-close"></i></div>
+    <div class="popupClose" @click="share.popuphide = true, share.free_open_hide = true"><i class="el-icon-close"></i>
+    </div>
     <div class="popupContent text-center">
         <h3 class="text-white">開啟自配方功能</h3>
         <hr class="border-white">
         <!-- 暫時 @click-->
-        <div @click="data_share.free_open_hide = true, data_share.free_ok_hide = false">
+        <div @click="share.free_open_hide = true, share.free_ok_hide = false">
             <img src="./assets/images/qr-code.png" alt="" srcset="">
         </div>
         <p class="text-lg text-white">請把QR-code拿到感應機前掃描</p>
     </div>
 </div>
                   <!-- free_ok -->
-<div id="freeOk" class="popup popup-blue" :class="{popupHide:data_share.free_ok_hide}">
+<div id="freeOk" class="popup popup-blue" :class="{popupHide:share.free_ok_hide}">
     <!-- 點擊 @click 關閉 popup -->
     <div class="popupContent text-center">
         <h3 class="text-white">開啟自配方功能</h3>
@@ -137,15 +136,15 @@
             <img src="./assets/images/qr-ok.png" alt="" srcset="">
         </div>
         <p class="text-lg text-white">掃描成功<br>自配方功能已開通</p>
-        <div class="btn btn-md text-white text-lg"
-            @click="data_share.free_ok_hide = true, data_share.free_drink_hide = false">開始使用</div>
+        <div class="btn btn-md text-white text-lg" @click="share.free_ok_hide = true, share.free_drink_hide = false">
+            開始使用</div>
     </div>
 </div>
                     <!-- free_drink -->
-<div id="freeDrink" class="popup" :class="{popupHide:data_share.free_drink_hide}">
+<div id="freeDrink" class="popup" :class="{popupHide:share.free_drink_hide}">
     <!-- 點擊 @click 關閉 popup -->
-    <div class="popupClose" @click="data_share.popuphide = true, data_share.free_drink_hide = true"><i
-            class="el-icon-close"></i></div>
+    <div class="popupClose" @click="share.popuphide = true, share.free_drink_hide = true"><i class="el-icon-close"></i>
+    </div>
     <div class="popupContent">
         <div class="freeDrink_title text-center">
             <h2>製作自配方</h2>
@@ -154,10 +153,10 @@
         <hr>
         <h3 class="mb-0">選擇容量<span class="text-notice">*</span></h3><br>
         <div class="drinkChoose text-center">
-            <input type="radio" name="free_cup" id="medium" checked>
-            <label for="medium">中杯</label>
-            <input type="radio" name="free_cup" id="large">
-            <label for="large">大杯</label>
+            <input type="radio" name="free_cup" id="free_medium" checked>
+            <label for="free_medium">中杯</label>
+            <input type="radio" name="free_cup" id="free_large">
+            <label for="free_large">大杯</label>
         </div>
         <!-- 進度條 -->
         <div class="drinkProgress">
@@ -296,58 +295,58 @@
         <div class="drinkChoose flex-item-center">
             <div class="mr-2 drinkType"><span>*</span>甜度</div>
             <div class="flex-item-center">
-                <input type="radio" name="free_sugar" id="sugar_no" checked>
-                <label for="sugar_no">無糖</label>
+                <input type="radio" name="free_sugar" id="free_sugar_no" checked>
+                <label for="free_sugar_no">無糖</label>
             </div>
             <div class="flex-item-center">
-                <input type="radio" name="free_sugar" id="sugar_3">
-                <label for="sugar_3">三分</label>
+                <input type="radio" name="free_sugar" id="free_sugar_3">
+                <label for="free_sugar_3">三分</label>
             </div>
             <div class="flex-item-center">
-                <input type="radio" name="free_sugar" id="sugar_5">
-                <label for="sugar_5">半分</label>
+                <input type="radio" name="free_sugar" id="free_sugar_5">
+                <label for="free_sugar_5">半分</label>
             </div>
             <div class="flex-item-center">
-                <input type="radio" name="free_sugar" id="sugar_7">
-                <label for="sugar_7">七分</label>
+                <input type="radio" name="free_sugar" id="free_sugar_7">
+                <label for="free_sugar_7">七分</label>
             </div>
             <div class="flex-item-center">
-                <input type="radio" name="free_sugar" id="sugar_10">
-                <label for="sugar_10">正常</label>
+                <input type="radio" name="free_sugar" id="free_sugar_10">
+                <label for="free_sugar_10">正常</label>
             </div>
         </div>
         <div class="drinkChoose flex-item-center">
             <div class="mr-2 drinkType"><span>*</span>溫度</div>
             <div class="flex-item-center">
-                <input type="radio" name="free_temp" id="cold" checked>
-                <label for="cold">冷飲</label>
+                <input type="radio" name="free_temp" id="free_cold" checked>
+                <label for="free_cold">冷飲</label>
             </div>
             <div class="flex-item-center">
-                <input type="radio" name="free_temp" id="normal">
-                <label for="normal">常溫</label>
+                <input type="radio" name="free_temp" id="free_normal">
+                <label for="free_normal">常溫</label>
             </div>
             <div class="flex-item-center">
-                <input type="radio" name="free_temp" id="hot">
-                <label for="hot">熱飲</label>
+                <input type="radio" name="free_temp" id="free_hot">
+                <label for="free_hot">熱飲</label>
             </div>
         </div>
         <div class="drinkChoose flex-item-center">
             <div class="mr-2 drinkType"><span>*</span>冰塊</div>
             <div class="flex-item-center">
-                <input type="radio" name="free_ice" id="ice_no" checked>
-                <label for="ice_no">去冰</label>
+                <input type="radio" name="free_ice" id="free_ice_no" checked>
+                <label for="free_ice_no">去冰</label>
             </div>
             <div class="flex-item-center">
-                <input type="radio" name="free_ice" id="ice_3">
-                <label for="ice_3">微冰</label>
+                <input type="radio" name="free_ice" id="free_ice_3">
+                <label for="free_ice_3">微冰</label>
             </div>
             <div class="flex-item-center">
-                <input type="radio" name="free_ice" id="ice_5">
-                <label for="ice_5">少冰</label>
+                <input type="radio" name="free_ice" id="free_ice_5">
+                <label for="free_ice_5">少冰</label>
             </div>
             <div class="flex-item-center">
-                <input type="radio" name="free_ice" id="ice_10">
-                <label for="ice_10">正常</label>
+                <input type="radio" name="free_ice" id="free_ice_10">
+                <label for="free_ice_10">正常</label>
             </div>
         </div>
         <div class="drinkChoose flex-item-center">
@@ -363,9 +362,9 @@
     </div>
 </div>
                       <!-- drink_detail -->
-<div id="drinkDetail" class="popup" :class="{popupHide:data_share.drink_detail_hide}">
+<div id="drinkDetail" class="popup" :class="{popupHide:share.drink_detail_hide}">
     <!-- 點擊 @click 關閉 popup -->
-    <div class="popupClose" @click="data_share.popuphide = true, data_share.drink_detail_hide = true"><i
+    <div class="popupClose" @click="share.popuphide = true, share.drink_detail_hide = true"><i
             class="el-icon-close"></i></div>
     <div class="popupContent">
         <el-row :gutter="50">

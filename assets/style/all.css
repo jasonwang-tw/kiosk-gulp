@@ -16,11 +16,6 @@ body {
   font-weight: 400;
   height: 100%; }
 
-body {
-  background-position: center 600px;
-  background-repeat: no-repeat;
-  background-image: url(../images/gradientBg.png); }
-
 a {
   text-decoration: none;
   color: #070150; }
@@ -117,7 +112,7 @@ img {
 
 .btn-lg {
   border-radius: 99px;
-  padding: 1rem 3rem; }
+  padding: .7rem 3rem; }
 
 .flex-space-between {
   display: -webkit-box;
@@ -169,6 +164,9 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
+
+.mt-5 {
+  margin-top: 1.25rem; }
 
 .mt-2 {
   margin-top: 0.5rem; }
@@ -222,6 +220,9 @@ img {
 .text-sm {
   font-size: 0.8rem; }
 
+.text-bold {
+  font-weight: bold; }
+
 .border-white {
   border-color: white; }
 
@@ -247,7 +248,7 @@ img {
   -webkit-box-shadow: 0 0 20px rgba(0, 16, 165, 0.2);
           box-shadow: 0 0 20px rgba(0, 16, 165, 0.2);
   border-radius: 99px;
-  padding: 1rem 3rem; }
+  padding: .7rem 3rem; }
 
 #banner .bannerImg {
   height: 230px;
@@ -318,6 +319,20 @@ img {
 
 #main {
   padding: 1rem; }
+
+.listPage {
+  background-attachment: fixed;
+  background-position: center 600px;
+  background-repeat: no-repeat;
+  background-image: url(../images/gradientBg.png); }
+
+.checkoutPage {
+  background-color: #f3f8ff; }
+
+.orderPage {
+  height: 100%;
+  margin-top: -144px;
+  background-image: url(../images/orderBg.jpg); }
 
 .pageTitle {
   text-align: center; }
@@ -650,7 +665,9 @@ img {
   -webkit-box-shadow: 0 0 20px rgba(0, 16, 165, 0.2);
           box-shadow: 0 0 20px rgba(0, 16, 165, 0.2);
   background-color: white;
-  position: relative; }
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0; }
   #navigation a {
     position: absolute; }
   #navigation h2 {
@@ -659,6 +676,7 @@ img {
 .buyList {
   padding: 1rem;
   background-color: white;
+  margin-bottom: 150px;
   border-radius: 1rem;
   overflow: hidden;
   border: 2px solid #afc8e9; }
@@ -692,6 +710,63 @@ img {
 .drinkItem .drinkChoose {
   margin-bottom: 0; }
 
+.orderMain {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center; }
+
+.orderLogo {
+  padding: 344px 0 250px; }
+
+.orderContent .orderQr,
+.orderContent .orderNumber {
+  display: block;
+  border-radius: 99px;
+  padding: .7rem 3rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 2px solid #57c4e5; }
+
+.orderContent .keyNumber {
+  height: 120px; }
+
+.orderHr {
+  border-color: #57c4e5;
+  margin: 1rem 0; }
+
+.orderText {
+  padding: 3rem 0 4.5rem;
+  font-size: 1.5rem; }
+
+.orderRemove {
+  text-decoration: underline; }
+
+.btnGroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .btnGroup div,
+  .btnGroup a {
+    color: white;
+    border-radius: 99px;
+    padding: .7rem 3rem; }
+  .btnGroup .orderAfterRemove {
+    background-color: #afc8e9;
+    margin-right: 2rem; }
+  .btnGroup .orderExchange {
+    background-color: #57c4e5; }
+
 .fixedBg {
   top: 0;
   left: 0;
@@ -721,7 +796,13 @@ img {
   overflow: inherit;
   border: 2px solid #afc8e9;
   background-color: white;
-  position: relative; }
+  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); }
   .popup .popupContent {
     height: 100%;
     overflow-x: hidden;
@@ -755,6 +836,9 @@ img {
     background-color: #f39519;
     width: 60%;
     margin: 2rem auto; }
+
+.popup-order {
+  height: auto; }
 
 .popupHide {
   opacity: 0;

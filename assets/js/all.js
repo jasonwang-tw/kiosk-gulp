@@ -1,6 +1,6 @@
 "use strict";
 
-var data_share = {
+var share = {
   popuphide: true,
   //控制 fixedBg 狀態
   free_open_hide: true,
@@ -9,19 +9,23 @@ var data_share = {
   //控制 free_ok 狀態
   free_drink_hide: true,
   //控制 free_drink 狀態
-  drink_detail_hide: true //控制 drink_detail 狀態
-
+  drink_detail_hide: true,
+  //控制 drink_detail 狀態
+  // order
+  scan_1_hide: true,
+  scan_2_hide: true,
+  scan_3_hide: true
 };
 new Vue({
   el: '#search',
   data: {
-    data_share: data_share
+    share: share
   }
 });
 new Vue({
   el: '#main',
   data: {
-    data_share: data_share
+    share: share
   },
   computed: {},
   methods: {}
