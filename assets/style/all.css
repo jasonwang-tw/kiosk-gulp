@@ -193,7 +193,7 @@ img {
   text-align: center; }
 
 .text-main {
-  color: #070150; }
+  color: #070150 !important; }
 
 .text-sup {
   color: #f39519; }

@@ -11,10 +11,13 @@ var share = {
   //控制 free_drink 狀態
   drink_detail_hide: true,
   //控制 drink_detail 狀態
-  // order
+  // order status
   scan_1_hide: true,
   scan_2_hide: true,
-  scan_3_hide: true
+  scan_3_hide: true,
+  scan_4_hide: true,
+  scan_5_hide: true,
+  scan_6_hide: true
 };
 new Vue({
   el: '#search',

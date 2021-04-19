@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        Kiosk
+    </title>
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" href="./assets/style/all.css">
+</head>
+
+  <body>
+    <div id="navigation">
+    <a href="index.html" class="text-border"><i class="el-icon-arrow-left mr-2"></i>回輸入訂單</a>
+    <h2 class="text-center">確認訂單</h2>
+</div>
+      <div id="main" class="orderPage">
+        
+<div class="orderMain">
+  <div>
+    <div class="orderLogo">
+      <img src="./assets/images/logo.svg" alt="" srcset="">
+    </div>
+    <div class="orderContent">
+      <!-- 暫時狀態 @click -->
+      <div class="text-bold text-lg text-border" @click="share.popuphide = false, share.scan_3_hide = false">請輸入8碼訂單編號</div>
+      <input type="text" class="keyNumber text-lg mt-5 btn-lg text-main">
+    </div>
+  </div>
+</div>
+          <!-- popuphide 控制 class: popupHide -->
+          <div class="fixedBg" :class="{popupHide:share.popuphide}">
+            <!-- 掃描QR -->
+
+            
+            
+            
+
+            
+            
+            
+            
+          </div>
+      </div>
+      <footer>
+        <!-- <script src="./assets/js/vendors.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="./assets/js/all.js"></script>
+      </footer>
+  </body>
+
+</html>
