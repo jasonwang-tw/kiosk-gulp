@@ -1,9 +1,9 @@
 ---
 title: Kiosk
-navTitle: 兌換訂單
-back: 回首頁
+navTitle: 確認訂單
+back: 回輸入訂單
 backLink: index.html
-scan_order: true
+scan_order: false
 key_order: false
 layout: ./app/template/order_exchange.ejs
 engine: ejs
@@ -16,9 +16,9 @@ engine: ejs
       <img src="./assets/images/logo.svg" alt="" srcset="">
     </div>
     <div class="orderContent">
-      <div class="orderQr text-lg text-bold" @click="share.popuphide=false,share.scan_1_hide=false">
-        掃描QR-code兌換訂單</div>
-      <a href="order_key_order.html" class="orderNumber text-lg text-bold mt-5">輸入兌換訂單碼</a>
+      <!-- 暫時狀態 @click -->
+      <div class="text-bold text-lg text-border" @click="share.popuphide = false, share.scan_3_hide = false">請輸入8碼訂單編號</div>
+      <input type="text" class="keyNumber text-lg mt-5 btn-lg text-main">
     </div>
   </div>
 </div>

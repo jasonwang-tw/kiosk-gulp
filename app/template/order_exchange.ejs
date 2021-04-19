@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<%- include('../component/header') %>
+
+  <body>
+    <%- include('../component/navigation') %>
+      <div id="main" class="orderPage">
+        <%- contents %>
+          <!-- popuphide 控制 class: popupHide -->
+          <div class="fixedBg" :class="{popupHide:share.popuphide}">
+            <!-- 掃描QR -->
+
+            <% if(scan_order) { %>
+              <div :class="{popupHide:share.scan_1_hide}">
+                <%- include('../component/popup/order_scan', {title:'<div class="text-border">請掃描條碼</div>', text:'<div @click="share.scan_1_hide = true, share.scan_2_hide = false">請把條碼拿到感應機前掃描</div>', btn:'<div @click="share.popuphide = true, share.scan_1_hide = true, share.scan_2_hide = true, share.scan_3_hide = true, share.scan_4_hide = true" class="orderRemove text-line-blue">取消，重新選擇</div>'}) %>
+              </div>
+              <div :class="{popupHide:share.scan_2_hide}">
+                <%- include('../component/popup/order_scan', {title:'<div class="text-border">請掃描條碼</div>', text:'<div @click="share.scan_2_hide = true, share.scan_3_hide = false">掃描中...</div>', btn:'<div @click="share.popuphide = true, share.scan_1_hide = true, share.scan_2_hide = true, share.scan_3_hide = true, share.scan_4_hide = true" class="orderRemove text-line-blue">取消，重新選擇</div>'}) %>
+              </div>
+            <% } %>
+            
+            <% if(scan_order || key_order) { %>
+              <div :class="{popupHide:share.scan_3_hide}">
+                <%- include('../component/popup/order_scan', {title:'<div class="text-border">請確認訂單編號</div>', text:'A1234567', btn:'<div class="btnGroup"><div @click="share.popuphide = true, share.scan_1_hide = true, share.scan_2_hide = true, share.scan_3_hide = true, share.scan_4_hide = true" class="orderAfterRemove">取消</div><div class="orderExchange" @click="share.scan_3_hide = true, share.scan_5_hide = false">確定</div></div>'}) %>
+              </div>
+            <% } %>
+
+            <% if(scan_order) { %>
+              <div :class="{popupHide:share.scan_4_hide}">
+                <%- include('../component/popup/order_scan', {title:'', text:'感應失敗', btn:'<div class="btnGroup"><div @click="share.popuphide = true, share.scan_1_hide = true, share.scan_2_hide = true, share.scan_3_hide = true, share.scan_4_hide = true" class="orderAfterRemove">回開始</div><a href="order.html" class="orderExchange">回兌換訂單</a></div>'}) %>
+              </div>
+            <% } %>
+            
+            <% if(key_order) { %>
+              <!-- 輸入訂單 -->
+              <div :class="{popupHide:share.scan_5_hide}">
+                <%- include('../component/popup/order_scan', {title:'<div class="text-border">請確認訂單編號</div>', text:'<div @click="share.scan_2_hide = true"><a href="order_check.html">處理中...</a></div>', btn:'<div @click="share.popuphide = true, share.scan_1_hide = true, share.scan_2_hide = true, share.scan_3_hide = true, share.scan_4_hide = true" class="orderRemove text-line-blue">取消，重新載入</div>'}) %>
+              </div>
+              <div :class="{popupHide:share.scan_6_hide}">
+                <%- include('../component/popup/order_scan', {title:'', text:'輸入錯誤(過長/過短)<br>請再檢查', btn:'<div class="btnGroup"><div @click="share.popuphide = true, share.scan_1_hide = true, share.scan_2_hide = true, share.scan_3_hide = true, share.scan_4_hide = true" class="orderAfterRemove">回開始</div><a href="order.html" class="orderExchange">回兌換訂單</a></div>'}) %>
+              </div>
+            <% } %>
+            
+          </div>
+      </div>
+      <footer>
+        <%- include('../component/footer') %>
+      </footer>
+  </body>
+
+</html>
