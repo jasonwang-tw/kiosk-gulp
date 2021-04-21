@@ -135,17 +135,6 @@ img {
   -ms-flex-pack: distribute;
       justify-content: space-around; }
 
-.flex-space-around {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
-
 .flex-center {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -183,6 +172,9 @@ img {
 .mr-2 {
   margin-right: 0.5rem; }
 
+.mr-5 {
+  margin-right: 1.25rem; }
+
 .ml-2 {
   margin-left: 0.5rem; }
 
@@ -213,6 +205,12 @@ img {
 
 .text-white {
   color: white; }
+
+.text-2xl {
+  font-size: 1.8rem; }
+
+.text-xl {
+  font-size: 1.4rem; }
 
 .text-lg {
   font-size: 1.2rem; }
@@ -687,28 +685,34 @@ img {
     padding-bottom: 1rem;
     border-bottom: 2px solid #afc8e9; }
 
-.drinkItem .itemImg {
-  width: 240px;
-  height: 240px;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  margin-right: 1rem;
-  border-radius: 1rem;
-  overflow: hidden;
-  border: 0px solid #afc8e9; }
-  .drinkItem .itemImg img {
-    -o-object-fit: cover;
-       object-fit: cover; }
+.buyList-orderCheck {
+  margin-bottom: 1rem; }
 
-.drinkItem .itemDetail {
-  width: 100%; }
-  .drinkItem .itemDetail h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0.5rem 0; }
-
-.drinkItem .drinkChoose {
-  margin-bottom: 0; }
+.drinkItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .drinkItem .itemImg {
+    width: 240px;
+    height: 240px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    margin-right: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 0px solid #afc8e9; }
+    .drinkItem .itemImg img {
+      -o-object-fit: cover;
+         object-fit: cover; }
+  .drinkItem .itemDetail {
+    width: 100%;
+    text-align: left; }
+    .drinkItem .itemDetail h3 {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0.5rem 0; }
+  .drinkItem .drinkChoose {
+    margin-bottom: 0; }
 
 .orderMain {
   height: 100%;
@@ -719,9 +723,12 @@ img {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center; }
+  .orderMain .orderFlex {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%; }
 
 .orderLogo {
-  padding: 344px 0 250px; }
+  padding: 344px 0 200px; }
 
 .orderContent .orderQr,
 .orderContent .orderNumber {
@@ -734,6 +741,9 @@ img {
 
 .orderContent .keyNumber {
   height: 120px; }
+
+.orderTitle {
+  padding: 0 1rem; }
 
 .orderHr {
   border-color: #57c4e5;
@@ -766,6 +776,46 @@ img {
     margin-right: 2rem; }
   .btnGroup .orderExchange {
     background-color: #57c4e5; }
+
+.btnGroup-orderCheck {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start; }
+  .btnGroup-orderCheck .orderExchange {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    background-color: #f39519; }
+
+.print, .succe {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  background-image: url("../images/print.jpg"); }
+
+.succe {
+  background-image: url("../images/succe.jpg"); }
+  .succe .orderLogo {
+    padding-bottom: 100px; }
+
+.succeInfo {
+  padding: 1.25rem;
+  height: 205px;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 2px solid #afc8e9; }
+
+.finalBtn {
+  color: white;
+  display: inline-block;
+  width: 250px;
+  background-color: #f39519; }
 
 .fixedBg {
   top: 0;

@@ -20,14 +20,40 @@
       <div id="main" class="orderPage">
         
 <div class="orderMain">
-  <div>
+  <div class="orderFlex">
     <div class="orderLogo">
       <img src="./assets/images/logo.svg" alt="" srcset="">
     </div>
     <div class="orderContent">
-      <!-- 暫時狀態 @click -->
-      <div class="text-bold text-lg text-border" @click="share.popuphide = false, share.scan_3_hide = false">請輸入8碼訂單編號</div>
-      <input type="text" class="keyNumber text-lg mt-5 btn-lg text-main">
+      <div class="orderTitle flex-space-between text-lg">
+        <div class="flex-center">
+          <i class="el-icon-s-order text-xl text-line-blue mr-2"></i>
+          <div class="mr-2">訂單編號</div>
+          <div>TOREWQ20201206001</div>
+        </div>
+        <div class="text-xl">總計<span class="text-notice mr-2 ml-2">3</span>杯</div>
+      </div>
+      <ul class="buyList buyList-orderCheck">
+        <li class="buyItem drinkItem flex-item-center">
+          <div class="itemImg">
+            <img src="./assets/images/drinkPhoto.png" alt="">
+          </div>
+          <div class="itemDetail">
+            <div class="flex-space-between">
+              <div class="flex-item-center">
+                <h3 class="mr-2">東方不敗</h3>
+              </div>
+            </div>
+            <div><span class="text-border mr-2">配料</span>粉圓、布丁、紅豆</div>
+            <div><span class="text-border mr-2">規格</span>冷飲、中杯、三分糖、微冰</div>
+            <div class="mt-2 text-notice"><span class="text-notice mr-2">兌換數量</span>3</div>
+          </div>
+        </li>
+      </ul>
+      <div class="btnGroup btnGroup-orderCheck">
+        <a  href="order.html" class="orderAfterRemove">取消</a>
+        <a href="print.html" class="orderExchange">兌換</a>
+      </div>
     </div>
   </div>
 </div>
