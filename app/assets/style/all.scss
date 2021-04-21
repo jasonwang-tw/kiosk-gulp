@@ -186,11 +186,7 @@ img {
   align-items: center;
   justify-content: space-around;
 }
-.flex-space-around {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 .flex-center {
   @include flex-center();
 }
@@ -215,6 +211,9 @@ img {
 }
 .mr-2 {
   margin-right: 0.5rem;
+}
+.mr-5 {
+  margin-right: 1.25rem;
 }
 .ml-2 {
   margin-left: 0.5rem;
@@ -246,6 +245,12 @@ img {
 }
 .text-white {
   color: $white;
+}
+.text-2xl {
+  font-size: 1.8rem;
+}
+.text-xl {
+  font-size: 1.4rem;
 }
 .text-lg {
   font-size: 1.2rem;
@@ -752,7 +757,11 @@ img {
     border-bottom: 2px solid $line-blue;
   }
 }
+.buyList-orderCheck {
+  margin-bottom: 1rem;
+}
 .drinkItem {
+  display: flex;
   .itemImg {
     width: 240px;
     height: 240px;
@@ -765,6 +774,7 @@ img {
   }
   .itemDetail {
     width: 100%;
+    text-align: left;
     h3 {
       margin-top: 0;
       margin-bottom: 0;
@@ -783,9 +793,12 @@ img {
   display: flex;
   justify-content: center;
   text-align: center;
+  .orderFlex {
+    flex-basis: 100%;
+  }
 }
 .orderLogo {
-  padding: 344px 0 250px;
+  padding: 344px 0 200px;
 }
 .orderContent {
   .orderQr,
@@ -797,6 +810,9 @@ img {
   .keyNumber {
     height: 120px;
   }
+}
+.orderTitle {
+  padding: 0 1rem;
 }
 .orderHr {
   border-color: $border;
@@ -823,6 +839,45 @@ img {
   .orderExchange {
     background-color: $border;
   }
+}
+.btnGroup-orderCheck {
+  justify-content: start;
+  .orderExchange {
+    flex-grow: 1;
+    background-color: $sup;
+  }
+}
+
+// print
+
+.print {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-image: url("../images/print.jpg");
+}
+
+// succe
+
+.succe {
+  @extend .print;
+  background-image: url("../images/succe.jpg");
+  .orderLogo {
+    padding-bottom: 100px;
+  }
+}
+.succeInfo {
+  padding: 1.25rem;
+  height: 205px;
+  background-color: $white;
+  @include round-border();
+}
+.finalBtn {
+  color: $white;
+  display: inline-block;
+  width: 250px;
+  background-color: $sup;
 }
 
 // poppu
