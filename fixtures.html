@@ -13,23 +13,44 @@
 </head>
 
   <body>
-    
-<div class="print">
+    <div id="navigation">
+    <a href="tickets.html" class="text-border"><i class="el-icon-arrow-left mr-2"></i>回發票類型</a>
+    <h2 class="text-center">選擇發票載具</h2>
+</div>
+      <div id="main" class="orderPage">
+        
+<div class="orderMain">
   <div>
     <div class="orderLogo">
       <img src="./assets/images/logo.svg" alt="" srcset="">
     </div>
-    <div>
-      <!-- 暫時連結 -->
-      <a href="succe.html">
-        <div class="text-xl text-border">列印單據請稍待...</div>
-        <div class="text-lg mt-5">
-          總計<span class="text-notice text-xl  ml-2 mr-2">7</span>項，共<span class="text-notice text-xl ml-2">$325</span>
-        </div>
+    <div class="orderContent">
+      <a href="print.html" class="orderContent_btn text-lg text-bold">
+        列印發票/明細
+      </a>
+      <a href="#" class="orderContent_btn text-lg text-bold mt-5">
+        掃描手機條碼
+      </a>
+      <a href="#" class="orderContent_btn text-lg text-bold mt-5">
+        自然人憑證
       </a>
     </div>
   </div>
-</div> 
+</div>
+          <!-- popuphide 控制 class: popupHide -->
+          <div class="fixedBg" :class="{popupHide:share.popuphide}">
+            <!-- 掃描QR -->
+
+            
+            
+            
+
+            
+            
+            
+            
+          </div>
+      </div>
       <footer>
         <!-- <script src="./assets/js/vendors.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
