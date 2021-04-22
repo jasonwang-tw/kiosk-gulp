@@ -1,0 +1,41 @@
+---
+title: Kiosk
+navTitle: 選擇支付工具
+back: 回購物車
+backLink: cart.html
+scan_order: false
+key_order: false
+layout: ./app/template/order.ejs
+engine: ejs
+<!-- current: index -->
+---
+
+<div class="orderMain">
+  <div class="orderPayout">
+    <div class="orderLogo">
+      <img src="./assets/images/logo.svg" alt="" srcset="">
+    </div>
+    <div class="orderContent">
+      <div class="flex-center mb-5">
+        <a href="tickets.html" class="payItem mr-5">
+          <h2>電子票證</h2>
+          <img src="./assets/images/card.png" alt="">
+        </a>
+        <div class="payItem">
+          <h2>信用卡</h2>
+          <img src="./assets/images/credit_card .png" alt="">
+        </div>
+      </div>
+      <div class="flex-center">
+        <div class="payItem mr-5">
+          <h2>LINEPAY</h2>
+          <img src="./assets/images/linepay.png" alt="">
+        </div>
+        <div class="payItem">
+          <h2>掃描行動支付</h2>
+          <img src="./assets/images/payment .png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

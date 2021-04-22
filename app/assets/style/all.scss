@@ -802,7 +802,8 @@ img {
 }
 .orderContent {
   .orderQr,
-  .orderNumber {
+  .orderNumber,
+  .orderContent_btn {
     display: block;
     @include btn-lg();
     @include round-border($b-color: $border);
@@ -846,6 +847,21 @@ img {
     flex-grow: 1;
     background-color: $sup;
   }
+}
+
+// pay out
+.orderPayout {
+  width: 85%;
+  .orderLogo {
+    padding-bottom: 100px;
+  }
+}
+.payItem {
+  @include round-border($b-color: $border);
+  flex-basis: 45%;
+  padding: 0.5rem;
+  height: 455px;
+  background-color: $white;
 }
 
 // print
