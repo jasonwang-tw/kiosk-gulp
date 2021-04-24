@@ -1,10 +1,13 @@
 ---
 title: Kiosk
-navTitle: 兌換訂單
-back: 回首頁
-backLink: index.html
+navTitle: 捐證碼輸入方式
+back: 回發票類型
+backLink: payout_ticketsType.html
 scan_order: false
-key_order: true
+key_order: false
+company: true
+donate_scan: false
+donate_import: false
 layout: ./app/template/order.ejs
 engine: ejs
 <!-- current: index -->
@@ -17,7 +20,7 @@ engine: ejs
     </div>
     <div class="orderContent">
       <!-- 暫時狀態 @click -->
-      <div class="text-bold text-lg text-border" @click="share.popuphide = false, share.scan_3_hide = false">請輸入8碼訂單編號
+      <div class="text-bold text-lg text-border" @click="share.popuphide = false, share.fixtures_1 = false">請輸入8碼的統一編號
       </div>
       <input type="text" class="keyNumber text-lg mt-5 btn-lg text-main">
     </div>

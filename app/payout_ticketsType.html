@@ -5,6 +5,9 @@ back: 回支付
 backLink: payout.html
 scan_order: false
 key_order: false
+company: false
+donate_scan: false
+donate_import: false
 layout: ./app/template/order.ejs
 engine: ejs
 <!-- current: index -->
@@ -16,13 +19,13 @@ engine: ejs
       <img src="./assets/images/logo.svg" alt="" srcset="">
     </div>
     <div class="orderContent">
-      <a href="fixtures.html" class="orderContent_btn text-lg text-bold">
+      <a href="payout_fixtures.html" class="orderContent_btn text-lg text-bold">
         個人發票
       </a>
-      <a href="#" class="orderContent_btn text-lg text-bold mt-5">
+      <a href="payout_company.html" class="orderContent_btn text-lg text-bold mt-5">
         公司統一編號
       </a>
-      <a href="#" class="orderContent_btn text-lg text-bold mt-5">
+      <a href="payout_donate.html" class="orderContent_btn text-lg text-bold mt-5">
         愛心捐證
       </a>
     </div>

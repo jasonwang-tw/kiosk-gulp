@@ -1,0 +1,27 @@
+---
+title: Kiosk
+navTitle: 輸入編號
+back: 回輸入方式
+backLink: payout_donate.html
+scan_order: false
+key_order: false
+company: false
+donate_scan: false
+donate_import: true
+layout: ./app/template/order.ejs
+engine: ejs
+<!-- current: index -->
+---
+
+<div class="orderMain">
+  <div>
+    <div class="orderLogo">
+      <img src="./assets/images/logo.svg" alt="" srcset="">
+    </div>
+    <div class="orderContent">
+      <div class="text-bold text-lg text-border" @click="share.popuphide = false, share.donate_impor_1 = false">請輸入3~7碼的愛心碼
+      </div>
+      <input type="text" class="keyNumber text-lg mt-5 btn-lg text-main">
+    </div>
+  </div>
+</div>

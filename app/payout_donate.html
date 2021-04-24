@@ -1,0 +1,30 @@
+---
+title: Kiosk
+navTitle: 捐證碼輸入方式
+back: 回發票類型
+backLink: payout_ticketsType.html
+scan_order: false
+key_order: false
+company: false
+donate_scan: true
+donate_import: false
+layout: ./app/template/order.ejs
+engine: ejs
+<!-- current: index -->
+---
+
+<div class="orderMain">
+  <div>
+    <div class="orderLogo">
+      <img src="./assets/images/logo.svg" alt="" srcset="">
+    </div>
+    <div class="orderContent">
+      <div @click="share.popuphide = false, share.donate_scan_1 = false" class="orderContent_btn text-lg text-bold">
+        掃描愛心捐款條碼
+      </div>
+      <a href="payout_donate_import.html" class="orderContent_btn text-lg text-bold mt-5">
+        輸入愛心捐款碼
+      </a>
+    </div>
+  </div>
+</div>

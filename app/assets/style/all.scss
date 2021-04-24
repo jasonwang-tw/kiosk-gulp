@@ -819,10 +819,6 @@ img {
   border-color: $border;
   margin: 1rem 0;
 }
-.orderText {
-  padding: 3rem 0 4.5rem;
-  font-size: 1.5rem;
-}
 .orderRemove {
   text-decoration: underline;
 }
@@ -913,7 +909,7 @@ img {
 .popup {
   padding: 1rem;
   width: 90%;
-  height: 90%;
+  // height: 90%;
   @include round-border($status: inherit);
   background-color: $white;
   position: relative;
@@ -922,6 +918,16 @@ img {
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+  }
+  .popupTitle {
+    color: $border;
+    border-bottom: 1px solid $border;
+    padding-bottom: 1rem;
+  }
+  .popupText {
+    padding: 3rem 0 4.5rem;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
   }
   .popupClose {
     position: absolute;
@@ -938,6 +944,16 @@ img {
     }
   }
 }
+.noTitle {
+  .popupTitle {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+.popup-limitheight {
+  height: 90%;
+}
 
 .popup-blue {
   height: auto;
@@ -947,10 +963,6 @@ img {
     width: 60%;
     margin: 2rem auto;
   }
-}
-
-.popup-order {
-  height: auto;
 }
 
 .popupHide {

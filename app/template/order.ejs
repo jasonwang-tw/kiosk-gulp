@@ -8,39 +8,85 @@
         <%- contents %>
           <!-- popuphide 控制 class: popupHide -->
           <div class="fixedBg" :class="{popupHide:share.popuphide}">
-            <!-- 掃描QR -->
 
             <% if(scan_order) { %>
-              <div :class="{popupHide:share.scan_1_hide}">
-                <%- include('../component/popup/order_scan', {title:'<div class="text-border">請掃描條碼</div>', text:'<div @click="share.scan_1_hide = true, share.scan_2_hide = false">請把條碼拿到感應機前掃描</div>', btn:'<div @click="share.popuphide = true, share.scan_1_hide = true, share.scan_2_hide = true, share.scan_3_hide = true, share.scan_4_hide = true" class="orderRemove text-line-blue">取消，重新選擇</div>'}) %>
+              <!-- 掃描QR -->
+              <div class="popup" :class="{popupHide:share.scan_1_hide}">
+                <%- include('../component/popup/order_popup', {title:'<div class="text-border">請掃描條碼</div>', text:'<div @click="share.scan_1_hide = true, share.scan_2_hide = false">請把條碼拿到感應機前掃描</div>', btn:'<div @click="share.popuphide = true, share.scan_1_hide = true, share.scan_2_hide = true, share.scan_3_hide = true, share.scan_4_hide = true" class="orderRemove text-line-blue">取消，重新選擇</div>'}) %>
               </div>
-              <div :class="{popupHide:share.scan_2_hide}">
-                <%- include('../component/popup/order_scan', {title:'<div class="text-border">請掃描條碼</div>', text:'<div @click="share.scan_2_hide = true, share.scan_3_hide = false">掃描中...</div>', btn:'<div @click="share.popuphide = true, share.scan_1_hide = true, share.scan_2_hide = true, share.scan_3_hide = true, share.scan_4_hide = true" class="orderRemove text-line-blue">取消，重新選擇</div>'}) %>
+              <div class="popup" :class="{popupHide:share.scan_2_hide}">
+                <%- include('../component/popup/order_popup', {title:'<div class="text-border">請掃描條碼</div>', text:'<div @click="share.scan_2_hide = true, share.scan_3_hide = false">掃描中...</div>', btn:'<div @click="share.popuphide = true, share.scan_1_hide = true, share.scan_2_hide = true, share.scan_3_hide = true, share.scan_4_hide = true" class="orderRemove text-line-blue">取消，重新選擇</div>'}) %>
               </div>
             <% } %>
             
             <% if(scan_order || key_order) { %>
-              <div :class="{popupHide:share.scan_3_hide}">
-                <%- include('../component/popup/order_scan', {title:'<div class="text-border">請確認訂單編號</div>', text:'A1234567', btn:'<div class="btnGroup"><div @click="share.popuphide = true, share.scan_1_hide = true, share.scan_2_hide = true, share.scan_3_hide = true, share.scan_4_hide = true" class="orderAfterRemove">取消</div><div class="orderExchange" @click="share.scan_3_hide = true, share.scan_5_hide = false">確定</div></div>'}) %>
+              <!-- 掃描QR & 輸入訂單-->
+              <div class="popup" :class="{popupHide:share.scan_3_hide}">
+                <%- include('../component/popup/order_popup', {title:'<div class="text-border">請確認訂單編號</div>', text:'A1234567', btn:'<div class="btnGroup"><div @click="share.popuphide = true, share.scan_1_hide = true, share.scan_2_hide = true, share.scan_3_hide = true, share.scan_4_hide = true" class="orderAfterRemove">取消</div><div class="orderExchange" @click="share.scan_3_hide = true, share.scan_5_hide = false">確定</div></div>'}) %>
+              </div>
+              <div class="popup" :class="{popupHide:share.scan_5_hide}">
+                <%- include('../component/popup/order_popup', {title:'<div class="text-border">請確認訂單編號</div>', text:'<div @click="share.scan_2_hide = true"><a href="order_check.html">處理中...</a></div>', btn:'<div @click="share.popuphide = true, share.scan_1_hide = true, share.scan_2_hide = true, share.scan_3_hide = true, share.scan_4_hide = true" class="orderRemove text-line-blue">取消，重新載入</div>'}) %>
               </div>
             <% } %>
 
             <% if(scan_order) { %>
-              <div :class="{popupHide:share.scan_4_hide}">
-                <%- include('../component/popup/order_scan', {title:'', text:'感應失敗', btn:'<div class="btnGroup"><div @click="share.popuphide = true, share.scan_1_hide = true, share.scan_2_hide = true, share.scan_3_hide = true, share.scan_4_hide = true" class="orderAfterRemove">回開始</div><a href="order.html" class="orderExchange">回兌換訂單</a></div>'}) %>
+              <!-- 掃描QR -->
+              <div class="popup" :class="{popupHide:share.scan_4_hide}">
+                <%- include('../component/popup/order_popup', {title:'', text:'感應失敗', btn:'<div class="btnGroup"><div @click="share.popuphide = true, share.scan_1_hide = true, share.scan_2_hide = true, share.scan_3_hide = true, share.scan_4_hide = true" class="orderAfterRemove">回開始</div><a href="order.html" class="orderExchange">回兌換訂單</a></div>'}) %>
               </div>
             <% } %>
             
             <% if(key_order) { %>
               <!-- 輸入訂單 -->
-              <div :class="{popupHide:share.scan_5_hide}">
-                <%- include('../component/popup/order_scan', {title:'<div class="text-border">請確認訂單編號</div>', text:'<div @click="share.scan_2_hide = true"><a href="order_check.html">處理中...</a></div>', btn:'<div @click="share.popuphide = true, share.scan_1_hide = true, share.scan_2_hide = true, share.scan_3_hide = true, share.scan_4_hide = true" class="orderRemove text-line-blue">取消，重新載入</div>'}) %>
-              </div>
-              <div :class="{popupHide:share.scan_6_hide}">
-                <%- include('../component/popup/order_scan', {title:'', text:'輸入錯誤(過長/過短)<br>請再檢查', btn:'<div class="btnGroup"><div @click="share.popuphide = true, share.scan_1_hide = true, share.scan_2_hide = true, share.scan_3_hide = true, share.scan_4_hide = true" class="orderAfterRemove">回開始</div><a href="order.html" class="orderExchange">回兌換訂單</a></div>'}) %>
+              <div class="popup" :class="{popupHide:share.scan_6_hide}">
+                <%- include('../component/popup/order_popup', {title:'', text:'輸入錯誤(過長/過短)<br>請再檢查', btn:'<div class="btnGroup"><div @click="share.popuphide = true, share.scan_1_hide = true, share.scan_2_hide = true, share.scan_3_hide = true, share.scan_4_hide = true" class="orderAfterRemove">回開始</div><a href="order.html" class="orderExchange">回兌換訂單</a></div>'}) %>
               </div>
             <% } %>
             
+            <!-- 支付流程 -->
+
+            <% if(company) { %>
+              <!-- 統編流程 -->
+              <div class="popup" :class="{popupHide:share.company_1}">
+                <%- include('../component/popup/order_popup', {title:'請確認統一編號', text:'50882936', btn:'<div class="btnGroup"><div class="orderAfterRemove">取消</div><div @click="share.company_1 = true, share.company_2 = false" class="orderExchange">確定</div></div>'}) %>
+              </div>
+              <div class="popup" :class="{popupHide:share.company_2}">
+                <%- include('../component/popup/order_popup', {title:'請確認訂單編號', text:'<div @click="share.company_2 = true, share.company_3 = false">處理中...</div>', btn:'<div class="orderRemove text-line-blue">取消，重新載入</div>'}) %>
+              </div>
+              <div class="popup noTitle" :class="{popupHide:share.company_3}">
+                <%- include('../component/popup/order_popup', {title:'', text:'輸入錯誤(過長/過短)<br>請再檢查', btn:'<div class="btnGroup"><a href="payout_fixtures.html" class="orderExchange">確定</a></div>'}) %>
+              </div>
+            <% } %>
+
+            <% if(donate_scan) { %>
+              <!-- 輸入愛心捐款碼 -->
+              <div class="popup" :class="{popupHide:share.donate_scan_1}">
+                <%- include('../component/popup/order_popup', {title:'請掃描條碼', text:'<div @click="share.donate_scan_1 = true, share.donate_scan_2 = false">請把條碼拿到感應機前掃描</div>', btn:'<div class="orderRemove text-line-blue">取消,重新選擇愛心捐證碼輸入方式...</div>'}) %>
+              </div>
+              <div class="popup" :class="{popupHide:share.donate_scan_2}">
+                <%- include('../component/popup/order_popup', {title:'請掃描條碼', text:'<div @click="share.donate_scan_2 = true, share.donate_scan_3 = false">掃描中...</div>', btn:'<div class="orderRemove text-line-blue">取消,重新選擇</div>'}) %>
+              </div>
+              <div class="popup" :class="{popupHide:share.donate_scan_3}">
+                <%- include('../component/popup/order_popup', {title:'請確認愛心碼', text:'8866', btn:'<div class="btnGroup"><div class="orderAfterRemove">取消</div><div @click="share.donate_scan_3 = true, share.donate_scan_4 = false" class="orderExchange">確定</div></div>'}) %>
+              </div>
+              <div class="popup noTitle" :class="{popupHide:share.donate_scan_4}">
+                <%- include('../component/popup/order_popup', {title:'', text:'輸入錯誤(過長/過短)<br>請再檢查', btn:'<div class="btnGroup"><a href="payout_fixtures.html" class="orderExchange">確定</a></div>'}) %>
+              </div>
+            <% } %>
+
+            <% if(donate_import) { %>
+              <!-- 輸入愛心捐款碼 -->
+              <div class="popup" :class="{popupHide:share.donate_impor_1}">
+                <%- include('../component/popup/order_popup', {title:'請確認愛心碼', text:'50882936', btn:'<div class="btnGroup"><div class="orderAfterRemove">取消</div><div @click="share.donate_impor_1 = true, share.donate_impor_2 = false" class="orderExchange">確定</div></div>'}) %>
+              </div>
+              <div class="popup" :class="{popupHide:share.donate_impor_2}">
+                <%- include('../component/popup/order_popup', {title:'請確認愛心碼', text:'<div @click="share.donate_impor_2 = true, share.donate_impor_3 = false">處理中...</div>', btn:'<div class="orderRemove text-line-blue">取消，重新載入</div>'}) %>
+              </div>
+              <div class="popup noTitle" :class="{popupHide:share.donate_impor_3}">
+                <%- include('../component/popup/order_popup', {title:'', text:'輸入錯誤(過長/過短)<br>請再檢查', btn:'<div class="btnGroup"><a href="payout_fixtures.html" class="orderExchange">確定</a></div>'}) %>
+              </div>
+            <% } %>
+
           </div>
       </div>
       <footer>
