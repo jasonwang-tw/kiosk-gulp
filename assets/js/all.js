@@ -17,7 +17,20 @@ var share = {
   scan_3_hide: true,
   scan_4_hide: true,
   scan_5_hide: true,
-  scan_6_hide: true
+  scan_6_hide: true,
+  // company
+  company_1: true,
+  company_2: true,
+  company_3: true,
+  // donate_scan
+  donate_scan_1: true,
+  donate_scan_2: true,
+  donate_scan_3: true,
+  donate_scan_4: true,
+  // donate_impor
+  donate_impor_1: true,
+  donate_impor_2: true,
+  donate_impor_3: true
 };
 new Vue({
   el: '#search',

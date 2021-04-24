@@ -750,10 +750,6 @@ img {
   border-color: #57c4e5;
   margin: 1rem 0; }
 
-.orderText {
-  padding: 3rem 0 4.5rem;
-  font-size: 1.5rem; }
-
 .orderRemove {
   text-decoration: underline; }
 
@@ -857,7 +853,6 @@ img {
 .popup {
   padding: 1rem;
   width: 90%;
-  height: 90%;
   border-radius: 1rem;
   overflow: inherit;
   border: 2px solid #afc8e9;
@@ -873,6 +868,14 @@ img {
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto; }
+  .popup .popupTitle {
+    color: #57c4e5;
+    border-bottom: 1px solid #57c4e5;
+    padding-bottom: 1rem; }
+  .popup .popupText {
+    padding: 3rem 0 4.5rem;
+    font-size: 1.5rem;
+    line-height: 2.25rem; }
   .popup .popupClose {
     position: absolute;
     right: -40px;
@@ -895,6 +898,13 @@ img {
     .popup .popupClose i {
       font-size: 1.5rem; }
 
+.noTitle .popupTitle {
+  border-bottom: none;
+  padding-bottom: 0; }
+
+.popup-limitheight {
+  height: 90%; }
+
 .popup-blue {
   height: auto;
   background-color: #57c4e5; }
@@ -902,9 +912,6 @@ img {
     background-color: #f39519;
     width: 60%;
     margin: 2rem auto; }
-
-.popup-order {
-  height: auto; }
 
 .popupHide {
   opacity: 0;
