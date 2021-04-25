@@ -8,6 +8,7 @@ key_order: false
 company: false
 donate_scan: false
 donate_import: false
+fixture: true
 layout: ./app/template/order.ejs
 engine: ejs
 <!-- current: index -->
@@ -19,15 +20,15 @@ engine: ejs
       <img src="./assets/images/logo.svg" alt="" srcset="">
     </div>
     <div class="orderContent">
-      <a href="print.html" class="orderContent_btn text-lg text-bold">
+      <a href="payout_print.html" class="orderContent_btn text-lg text-bold">
         列印發票/明細
       </a>
-      <a href="#" class="orderContent_btn text-lg text-bold mt-5">
+      <div @click="share.popuphide = false, share.fixture_1 = false" class="orderContent_btn text-lg text-bold mt-5">
         掃描手機條碼
-      </a>
-      <a href="#" class="orderContent_btn text-lg text-bold mt-5">
+      </div>
+      <div @click="share.popuphide = false, share.fixture_1 = false" class="orderContent_btn text-lg text-bold mt-5">
         自然人憑證
-      </a>
+      </div>
     </div>
   </div>
 </div>

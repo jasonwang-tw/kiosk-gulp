@@ -8,6 +8,7 @@ key_order: false
 company: true
 donate_scan: false
 donate_import: false
+fixture: false
 layout: ./app/template/order.ejs
 engine: ejs
 <!-- current: index -->
@@ -20,7 +21,7 @@ engine: ejs
     </div>
     <div class="orderContent">
       <!-- 暫時狀態 @click -->
-      <div class="text-bold text-lg text-border" @click="share.popuphide = false, share.fixtures_1 = false">請輸入8碼的統一編號
+      <div class="text-bold text-lg text-border" @click="share.popuphide = false, share.company_1 = false">請輸入8碼的統一編號
       </div>
       <input type="text" class="keyNumber text-lg mt-5 btn-lg text-main">
     </div>

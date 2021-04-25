@@ -1,0 +1,25 @@
+---
+title: Kiosk
+layout: ./app/template/index.ejs
+paying: true
+paying_easycard: false
+paying_creditcard: false
+paying_linepay: true
+paying_payment: false
+engine: ejs
+<!-- current: index -->
+---
+
+<div class="paying">
+  <div>
+    <div class="orderLogo">
+      <img src="./assets/images/logo.svg" alt="" srcset="">
+    </div>
+    <div>
+      <div class="text-xl text-border">列印單據請稍待...</div>
+      <div class="text-lg mt-5">
+        總計<span class="text-notice text-xl  ml-2 mr-2">7</span>項，共<span class="text-notice text-xl ml-2">$325</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -3,7 +3,45 @@
 <%- include('../component/header') %>
 
   <body>
+    <div id="main" class="payingPage">
     <%- contents %>
+      
+        <% if(paying) { %>
+          <!-- popuphide 控制 class: popupHide -->
+          <div class="fixedBg" :class="{popupHide:share.paying_popup}">
+            <!-- 發生錯誤 -->
+            <div class="popup noTitle" :class="{popupHide:share.paying_error}">
+              <%- include('../component/popup/order_popup', {title:'', text:'<div><a href="payout_print.html">交易失敗</a></div>', btn:'<div class="orderRemove text-line-blue">取消，重新選擇</div>'}) %>
+            </div>
+
+            <% if(paying_easycard) { %>
+              <div class="popup" :class="{popupHide:share.paying}">
+                <%- include('../component/popup/order_popup', {title:'<div class="text-border">電子票證付款</div>', text:'<div @click="share.paying = true,share.paying_error = false">請在刷卡機上感應電票卡片</div>', btn:'<div class="orderRemove text-line-blue">取消，重新選擇</div>'}) %>
+              </div>
+            <% }%>
+
+            <% if(paying_creditcard) { %>
+              <div class="popup" :class="{popupHide:share.paying}">
+                <%- include('../component/popup/order_popup', {title:'<div class="text-border">信用卡付款</div>', text:'<div @click="share.paying = true,share.paying_error = false">請用刷卡機感應<br>或使用側邊卡槽刷卡片</div>', btn:'<div class="orderRemove text-line-blue">取消，重新選擇</div>'}) %>
+            </div>
+            <% }%>
+
+            <% if(paying_linepay) { %>
+              <div class="popup" :class="{popupHide:share.paying}">
+                <%- include('../component/popup/order_popup', {title:'<div class="text-border">LINE Pay付款</div>', text:'<div @click="share.paying = true,share.paying_error = false">LINE Pay付款處理中...</div>', btn:'<div class="orderRemove text-line-blue">取消，重新選擇</div>'}) %>
+            </div>
+            <% }%>
+
+            <% if(paying_payment) { %>
+              <div class="popup" :class="{popupHide:share.paying}">
+                <%- include('../component/popup/order_popup', {title:'<div class="text-border">行動支付付款</div>', text:'<div @click="share.paying = true,share.paying_error = false">行動支付付款處理中...</div>', btn:'<div class="orderRemove text-line-blue">取消，重新選擇</div>'}) %>
+            </div>
+            <% }%>
+
+          </div>
+        <% } %>
+
+      </div>
       <footer>
         <%- include('../component/footer') %>
       </footer>

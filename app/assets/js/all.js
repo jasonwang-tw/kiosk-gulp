@@ -14,16 +14,23 @@ let share = {
   // company
   company_1: true,
   company_2: true,
-  company_3: true,
   // donate_scan
   donate_scan_1: true,
   donate_scan_2: true,
   donate_scan_3: true,
-  donate_scan_4: true,
   // donate_impor
   donate_impor_1: true,
   donate_impor_2: true,
-  donate_impor_3: true
+  // fixture_flow
+  fixture_1: true,
+  fixture_2: true,
+  fixture_3: true,
+  fixture_4: true,
+  fixture_5: true,
+  // paying0
+  paying_error: true,
+  paying_popup: false,
+  paying: false
 }
 
 new Vue({
@@ -41,3 +48,4 @@ new Vue({
   computed: {},
   methods: {}
 })
+

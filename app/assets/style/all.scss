@@ -270,7 +270,6 @@ img {
 .home {
   height: 100%;
   background-image: url("../images/index.jpg");
-  background-repeat: no-repeat;
   @include flex-center();
 }
 .starBtn {
@@ -371,6 +370,10 @@ img {
   height: 100%;
   margin-top: -144px;
   background-image: url(../images/orderBg.jpg);
+}
+#main.payingPage {
+  padding: 0;
+  height: 100%;
 }
 
 // top10
@@ -862,18 +865,18 @@ img {
 
 // print
 
-.print {
+.paying {
   height: 100%;
   display: flex;
   justify-content: center;
   text-align: center;
-  background-image: url("../images/print.jpg");
+  background-image: url("../images/paying.jpg");
 }
 
 // succe
 
 .succe {
-  @extend .print;
+  @extend .paying;
   background-image: url("../images/succe.jpg");
   .orderLogo {
     padding-bottom: 100px;
@@ -925,9 +928,12 @@ img {
     padding-bottom: 1rem;
   }
   .popupText {
-    padding: 3rem 0 4.5rem;
+    padding: 3rem 0 3.5rem;
     font-size: 1.5rem;
     line-height: 2.25rem;
+    > div {
+      line-height: 2.25rem;
+    }
   }
   .popupClose {
     position: absolute;
