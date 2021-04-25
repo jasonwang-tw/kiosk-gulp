@@ -11,9 +11,18 @@
               <!-- popuphide 控制 class: popupHide -->
               <div class="fixedBg" :class="{popupHide:share.popuphide}">
                 <%- include('../component/popup/free_open') %>
-                  <%- include('../component/popup/free_ok') %>
-                    <%- include('../component/popup/free_drink') %>
-                      <%- include('../component/popup/drink_detail') %>
+
+                  <!-- free_ok -->
+                  <div id="freeOk" class="popup popup-blue" :class="{popupHide:share.free_ok_hide}">
+                    <%- include('../component/popup/free_popup', {freeTitle:'開啟自配方功能', freeImg:'./assets/images/qr-ok.png',freeText:'掃描成功<br>自配方功能已開通', freeBtn:'<div class="btn btn-md text-white text-lg" @click="share.free_ok_hide = true, share.free_drink_hide = false">開始使用</div>'}) %>
+                  </div>
+                  <!-- free_error -->
+                  <div id="freeError" class="popup popup-blue" :class="{popupHide:share.free_error_hide}">
+                    <%- include('../component/popup/free_popup', {freeTitle:'開啟自配方功能', freeImg:'./assets/images/warning.png', freeText:'掃描成功<br>自配方功能已開通',freeBtn:'<div class="btn btn-md text-white text-lg">確定</div>'}) %>
+                  </div>
+
+                  <%- include('../component/popup/free_drink') %>
+                    <%- include('../component/popup/drink_detail') %>
               </div>
           </div>
           <%- include('../component/checkoutBar') %>

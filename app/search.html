@@ -1,0 +1,42 @@
+---
+title: Kiosk
+btnText: 確認訂單
+cheakLine: cart.html
+layout: ./app/template/main.ejs
+engine: ejs
+<!-- current: index -->
+---
+
+<div id="top-10" class="mainIndex" data-index="0">
+    <div class="pageTitle">
+        <el-divider content-position="center">
+            <h1>飲品編號搜尋結果</h1>
+        </el-divider>
+    </div>
+    <el-row :gutter="30" class="pt-5 infinite-list" style="overflow:auto">
+        <el-col :span="8" class="infinite-list-item">
+            <div class="grid-content drinkCard">
+                <div class="drinkImg">
+                    <img src="./assets/images/banner.jpg" alt="">
+                </div>
+                <div class="drinkInfo">
+                    <div class="mb-2 flex-space-between">
+                        <div class="drinkName">古道茶鄉</div>
+                        <div class="drinkPrice">$60</div>
+                    </div>
+                    <div class="flex-space-between">
+                        <div class="drinkRating"><i class="el-icon-star-on">4.7</i></div>
+                        <div class="drinkSell"><span class="type">已售出</span>8k</div>
+                    </div>
+                </div>
+            </div>
+        </el-col>
+        <el-col :span="24" class="infinite-list-item">
+            <div class="text-center">
+                <img src="./assets/images/nodata.png" alt="">
+                <h3 class="text-border">查無資料</h3>
+                <p>請檢查是否打錯字<br>或試著用其他方式購買飲料吧！</p>
+            </div>
+        </el-col>
+    </el-row>
+</div>

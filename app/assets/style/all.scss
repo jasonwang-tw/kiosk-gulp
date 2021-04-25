@@ -746,10 +746,12 @@ img {
     margin: 0;
   }
 }
+.cartContent {
+  margin-bottom: 150px;
+}
 .buyList {
   padding: 1rem;
   background-color: $white;
-  margin-bottom: 150px;
   @include round-border();
   .buyItem {
     list-style-type: none;

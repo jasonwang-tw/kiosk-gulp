@@ -16,7 +16,7 @@
 
             <% if(paying_easycard) { %>
               <div class="popup" :class="{popupHide:share.paying}">
-                <%- include('../component/popup/order_popup', {title:'<div class="text-border">電子票證付款</div>', text:'<div @click="share.paying = true,share.paying_error = false">請在刷卡機上感應電票卡片</div>', btn:'<div class="orderRemove text-line-blue">取消，重新選擇</div>'}) %>
+                <%- include('../component/popup/order_popup', {title:'<div class="text-border">電子票證付款</div>', text:'<div @click="share.paying = true,share.paying_error = false">請在刷卡機上感應電票卡片</div>', btn:'<div class="orderRemove text-line-blue">取消，重新選擇</div>'}) %> 
               </div>
             <% }%>
 
