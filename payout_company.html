@@ -26,7 +26,7 @@
     </div>
     <div class="orderContent">
       <!-- 暫時狀態 @click -->
-      <div class="text-bold text-lg text-border" @click="share.popuphide = false, share.fixtures_1 = false">請輸入8碼的統一編號
+      <div class="text-bold text-lg text-border" @click="share.popuphide = false, share.company_1 = false">請輸入8碼的統一編號
       </div>
       <input type="text" class="keyNumber text-lg mt-5 btn-lg text-main">
     </div>
@@ -46,7 +46,7 @@
             <!-- 支付流程 -->
 
             
-              <!-- 統編流程 -->
+              <!-- 統編 -->
               <div class="popup" :class="{popupHide:share.company_1}">
                 <!-- 點擊 @click 關閉 popup -->
 <div class="popupContent text-center">
@@ -61,21 +61,7 @@
     </div>
 </div>
               </div>
-              <div class="popup" :class="{popupHide:share.company_2}">
-                <!-- 點擊 @click 關閉 popup -->
-<div class="popupContent text-center">
-    <div class="popupTitle">
-        請確認訂單編號
-    </div>
-    <div class="popupText text-bold">
-        <div @click="share.company_2 = true, share.company_3 = false">處理中...</div>
-    </div>
-    <div>
-        <div class="orderRemove text-line-blue">取消，重新載入</div>
-    </div>
-</div>
-              </div>
-              <div class="popup noTitle" :class="{popupHide:share.company_3}">
+              <div class="popup noTitle" :class="{popupHide:share.company_2}">
                 <!-- 點擊 @click 關閉 popup -->
 <div class="popupContent text-center">
     <div class="popupTitle">
@@ -92,6 +78,10 @@
             
 
             
+
+            
+
+            <!-- 發票/載具流程 -->
 
             
 

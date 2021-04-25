@@ -227,7 +227,6 @@ img {
 .home {
   height: 100%;
   background-image: url("../images/index.jpg");
-  background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -331,6 +330,10 @@ img {
   height: 100%;
   margin-top: -144px;
   background-image: url(../images/orderBg.jpg); }
+
+#main.payingPage {
+  padding: 0;
+  height: 100%; }
 
 .pageTitle {
   text-align: center; }
@@ -671,10 +674,12 @@ img {
   #navigation h2 {
     margin: 0; }
 
+.cartContent {
+  margin-bottom: 150px; }
+
 .buyList {
   padding: 1rem;
   background-color: white;
-  margin-bottom: 150px;
   border-radius: 1rem;
   overflow: hidden;
   border: 2px solid #afc8e9; }
@@ -799,7 +804,7 @@ img {
   height: 455px;
   background-color: white; }
 
-.print, .succe {
+.paying, .succe {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -808,7 +813,7 @@ img {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  background-image: url("../images/print.jpg"); }
+  background-image: url("../images/paying.jpg"); }
 
 .succe {
   background-image: url("../images/succe.jpg"); }
@@ -873,9 +878,11 @@ img {
     border-bottom: 1px solid #57c4e5;
     padding-bottom: 1rem; }
   .popup .popupText {
-    padding: 3rem 0 4.5rem;
+    padding: 3rem 0 3.5rem;
     font-size: 1.5rem;
     line-height: 2.25rem; }
+    .popup .popupText > div {
+      line-height: 2.25rem; }
   .popup .popupClose {
     position: absolute;
     right: -40px;

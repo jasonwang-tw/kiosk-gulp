@@ -29,7 +29,10 @@
         <div id="search">
     <el-row :gutter="20" type="flex" align="middle">
         <el-col :span="18">
-            <i class="el-icon-search"></i><input type="text" name="" id="" placeholder="搜尋飲品編號" class="searchBar">
+            <!-- 暫時連結 -->
+            <a href="search.html">
+                <i class="el-icon-search"></i><input type="text" name="" id="" placeholder="搜尋飲品編號" class="searchBar">
+            </a>
         </el-col>
         <el-col :span="6">
             <!-- 開啟自配方 -->
@@ -126,21 +129,43 @@
         <p class="text-lg text-white">請把QR-code拿到感應機前掃描</p>
     </div>
 </div>
+
                   <!-- free_ok -->
-<div id="freeOk" class="popup popup-blue" :class="{popupHide:share.free_ok_hide}">
-    <!-- 點擊 @click 關閉 popup -->
-    <div class="popupContent text-center">
-        <h3 class="text-white">開啟自配方功能</h3>
-        <hr class="border-white">
-        <div>
-            <img src="./assets/images/qr-ok.png" alt="" srcset="">
-        </div>
-        <p class="text-lg text-white">掃描成功<br>自配方功能已開通</p>
-        <div class="btn btn-md text-white text-lg" @click="share.free_ok_hide = true, share.free_drink_hide = false">
-            開始使用</div>
+                  <div id="freeOk" class="popup popup-blue" :class="{popupHide:share.free_ok_hide}">
+                    <!-- 點擊 @click 關閉 popup -->
+<div class="popupContent text-center">
+    <h3 class="text-white">
+        開啟自配方功能
+    </h3>
+    <hr class="border-white">
+    <div>
+        <img src="./assets/images/qr-ok.png" alt="" srcset="">
     </div>
+    <p class="text-lg text-white">
+        掃描成功<br>自配方功能已開通
+    </p>
+    <div class="btn btn-md text-white text-lg" @click="share.free_ok_hide = true, share.free_drink_hide = false">開始使用</div>
 </div>
-                    <!-- free_drink -->
+                  </div>
+                  <!-- free_error -->
+                  <div id="freeError" class="popup popup-blue" :class="{popupHide:share.free_error_hide}">
+                    <!-- 點擊 @click 關閉 popup -->
+<div class="popupContent text-center">
+    <h3 class="text-white">
+        開啟自配方功能
+    </h3>
+    <hr class="border-white">
+    <div>
+        <img src="./assets/images/warning.png" alt="" srcset="">
+    </div>
+    <p class="text-lg text-white">
+        掃描成功<br>自配方功能已開通
+    </p>
+    <div class="btn btn-md text-white text-lg">確定</div>
+</div>
+                  </div>
+
+                  <!-- free_drink -->
 <div id="freeDrink" class="popup popup-limitheight" :class="{popupHide:share.free_drink_hide}">
     <!-- 點擊 @click 關閉 popup -->
     <div class="popupClose" @click="share.popuphide = true, share.free_drink_hide = true"><i class="el-icon-close"></i>
@@ -361,7 +386,7 @@
         </div>
     </div>
 </div>
-                      <!-- drink_detail -->
+                    <!-- drink_detail -->
 <div id="drinkDetail" class="popup popup-limitheight" :class="{popupHide:share.drink_detail_hide}">
     <!-- 點擊 @click 關閉 popup -->
     <div class="popupClose" @click="share.popuphide = true, share.drink_detail_hide = true"><i

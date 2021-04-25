@@ -7,6 +7,8 @@ var share = {
   //控制 free_open 狀態
   free_ok_hide: true,
   //控制 free_ok 狀態
+  free_error_hide: true,
+  //控制 free_ok 狀態
   free_drink_hide: true,
   //控制 free_drink 狀態
   drink_detail_hide: true,
@@ -21,16 +23,23 @@ var share = {
   // company
   company_1: true,
   company_2: true,
-  company_3: true,
   // donate_scan
   donate_scan_1: true,
   donate_scan_2: true,
   donate_scan_3: true,
-  donate_scan_4: true,
   // donate_impor
   donate_impor_1: true,
   donate_impor_2: true,
-  donate_impor_3: true
+  // fixture_flow
+  fixture_1: true,
+  fixture_2: true,
+  fixture_3: true,
+  fixture_4: true,
+  fixture_5: true,
+  // paying0
+  paying_error: true,
+  paying_popup: false,
+  paying: false
 };
 new Vue({
   el: '#search',

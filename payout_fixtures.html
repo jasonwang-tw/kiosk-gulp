@@ -25,15 +25,15 @@
       <img src="./assets/images/logo.svg" alt="" srcset="">
     </div>
     <div class="orderContent">
-      <a href="print.html" class="orderContent_btn text-lg text-bold">
+      <a href="payout_print.html" class="orderContent_btn text-lg text-bold">
         列印發票/明細
       </a>
-      <a href="#" class="orderContent_btn text-lg text-bold mt-5">
+      <div @click="share.popuphide = false, share.fixture_1 = false" class="orderContent_btn text-lg text-bold mt-5">
         掃描手機條碼
-      </a>
-      <a href="#" class="orderContent_btn text-lg text-bold mt-5">
+      </div>
+      <div @click="share.popuphide = false, share.fixture_1 = false" class="orderContent_btn text-lg text-bold mt-5">
         自然人憑證
-      </a>
+      </div>
     </div>
   </div>
 </div>
@@ -54,6 +54,84 @@
 
             
 
+            
+
+            <!-- 發票/載具流程 -->
+
+            
+              <!-- 掃描載具條碼 & 自然人憑證 共用-->
+              <div class="popup" :class="{popupHide:share.fixture_1}">
+                <!-- 點擊 @click 關閉 popup -->
+<div class="popupContent text-center">
+    <div class="popupTitle">
+        請掃描條碼
+    </div>
+    <div class="popupText text-bold">
+        <div @click="share.fixture_1 = true, share.fixture_2 = false">請把條碼拿到感應機前掃描</div>
+    </div>
+    <div>
+        <div class="orderRemove text-line-blue">取消，重新載入</div>
+    </div>
+</div>
+              </div>
+              <!-- 掃描載具條碼 -->
+              <div class="popup" :class="{popupHide:share.fixture_2}">
+                <!-- 點擊 @click 關閉 popup -->
+<div class="popupContent text-center">
+    <div class="popupTitle">
+        請確認載具條碼
+    </div>
+    <div class="popupText text-bold">
+        /ALVBYTR
+    </div>
+    <div>
+        <div class="btnGroup"><div class="orderAfterRemove">取消</div><div @click="share.fixture_2 = true, share.fixture_3 = false" class="orderExchange">確定</div></div>
+    </div>
+</div>
+              </div>
+              <div class="popup noTitle" :class="{popupHide:share.fixture_3}">
+                <!-- 點擊 @click 關閉 popup -->
+<div class="popupContent text-center">
+    <div class="popupTitle">
+        
+    </div>
+    <div class="popupText text-bold">
+        <div @click="share.fixture_3 = true, share.fixture_4 = false">感應失敗</div>
+    </div>
+    <div>
+        <div class="orderRemove text-line-blue">取消，重新載入</div>
+    </div>
+</div>
+              </div>
+              <!-- 自然人憑證 -->
+              <div class="popup" :class="{popupHide:share.fixture_4}">
+                <!-- 點擊 @click 關閉 popup -->
+<div class="popupContent text-center">
+    <div class="popupTitle">
+        請確認自然人憑證
+    </div>
+    <div class="popupText text-bold">
+        <div @click="share.fixture_4 = true, share.fixture_5 = false">TP03000001234567</div>
+    </div>
+    <div>
+        <div class="btnGroup"><div class="orderAfterRemove">取消</div><div class="orderExchange">確定</div></div>
+    </div>
+</div>
+              </div>
+              <div class="popup noTitle" :class="{popupHide:share.fixture_5}">
+                <!-- 點擊 @click 關閉 popup -->
+<div class="popupContent text-center">
+    <div class="popupTitle">
+        
+    </div>
+    <div class="popupText text-bold">
+        無效的自然人憑證
+    </div>
+    <div>
+        <div class="orderRemove text-line-blue">取消，重新載入</div>
+    </div>
+</div>
+              </div>
             
 
           </div>
