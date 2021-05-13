@@ -290,7 +290,8 @@ img {
 #search {
   padding: 1rem; }
 
-.freeBtn {
+.freeBtn,
+.gohome {
   border-radius: 0.8rem;
   height: 80px;
   color: #57c4e5;
@@ -300,12 +301,14 @@ img {
 .searchBar {
   padding: 1rem 80px; }
 
-.freeBtn {
+.freeBtn,
+.gohome {
   text-align: center;
   display: block;
   height: auto;
   padding: 14px 1rem; }
-  .freeBtn i {
+  .freeBtn i,
+  .gohome i {
     margin-right: 10px; }
 
 .el-icon-search:before {
@@ -367,10 +370,10 @@ img {
 .drinkCard .topDrink {
   text-align: center;
   padding-top: 15px;
-  background-image: url(../images/indexNumber.png); }
+  background-image: url(../images/indexNumber.svg); }
 
 .drinkCard .goodDrink {
-  background-image: url(../images/good.png); }
+  background-image: url(../images/good.svg); }
 
 .drinkCard .drinkImg {
   height: 220px;
