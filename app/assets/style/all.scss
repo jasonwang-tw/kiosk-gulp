@@ -330,13 +330,15 @@ img {
   padding: 1rem;
 }
 
-.freeBtn {
+.freeBtn,
+.gohome {
   @include input();
 }
 .searchBar {
   padding: 1rem 80px;
 }
-.freeBtn {
+.freeBtn,
+.gohome {
   text-align: center;
   display: block;
   height: auto;
@@ -415,10 +417,10 @@ img {
   .topDrink {
     text-align: center;
     padding-top: 15px;
-    background-image: url(../images/indexNumber.png);
+    background-image: url(../images/indexNumber.svg);
   }
   .goodDrink {
-    background-image: url(../images/good.png);
+    background-image: url(../images/good.svg);
   }
   .drinkImg {
     height: 220px;
