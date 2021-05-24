@@ -70,7 +70,7 @@
         <div @click="share.fixture_1 = true, share.fixture_2 = false">請把條碼拿到感應機前掃描</div>
     </div>
     <div>
-        <div class="orderRemove text-line-blue">取消，重新載入</div>
+        <div class="orderRemove text-line-blue" @click="share.fixture_1 = true,share.popuphide = true">取消，重新載入</div>
     </div>
 </div>
               </div>
@@ -99,7 +99,7 @@
         <div @click="share.fixture_3 = true, share.fixture_4 = false">感應失敗</div>
     </div>
     <div>
-        <div class="orderRemove text-line-blue">取消，重新載入</div>
+        <div class="orderRemove text-line-blue" @click="share.fixture_3 = true,share.popuphide = true">取消，重新載入</div>
     </div>
 </div>
               </div>
@@ -128,7 +128,7 @@
         無效的自然人憑證
     </div>
     <div>
-        <div class="orderRemove text-line-blue">取消，重新載入</div>
+        <div class="orderRemove text-line-blue" @click="share.fixture_5 = true,share.popuphide = true">取消，重新載入</div>
     </div>
 </div>
               </div>

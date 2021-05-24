@@ -21,7 +21,7 @@
       <img src="./assets/images/logo.svg" alt="" srcset="">
     </div>
     <div>
-      <div class="text-xl text-border">列印單據請稍待...</div>
+      <div class="text-xl text-border">信用卡付款處理中...</div>
       <div class="text-lg mt-5">
         總計<span class="text-notice text-xl  ml-2 mr-2">7</span>項，共<span class="text-notice text-xl ml-2">$325</span>
       </div>
@@ -43,7 +43,7 @@
         <div><a href="payout_print.html">交易失敗</a></div>
     </div>
     <div>
-        <div class="orderRemove text-line-blue">取消，重新選擇</div>
+        <div class="orderRemove text-line-blue" @click="share.paying = true, share.paying_popup = true">取消，重新選擇</div>
     </div>
 </div>
             </div>
@@ -58,10 +58,10 @@
         <div class="text-border">信用卡付款</div>
     </div>
     <div class="popupText text-bold">
-        <div @click="share.paying = true,share.paying_error = false">請用刷卡機感應<br>或使用側邊卡槽刷卡片</div>
+        <div @click="share.paying = true,share.paying_error = false">請用刷卡機感應<br>或使用側邊卡槽刷卡片</div><i class="el-icon-loading text-xl text-line-blue"></i>
     </div>
     <div>
-        <div class="orderRemove text-line-blue">取消，重新選擇</div>
+        <div class="orderRemove text-line-blue" @click="share.paying = true, share.paying_popup = true">取消，重新選擇</div>
     </div>
 </div>
             </div>

@@ -45,7 +45,7 @@
         <div><a href="payout_print.html">交易失敗</a></div>
     </div>
     <div>
-        <div class="orderRemove text-line-blue">取消，重新選擇</div>
+        <div class="orderRemove text-line-blue" @click="share.paying = true, share.paying_popup = true">取消，重新選擇</div>
     </div>
 </div>
             </div>
@@ -67,7 +67,7 @@
         <div @click="share.paying = true,share.paying_error = false">行動支付付款處理中...</div>
     </div>
     <div>
-        <div class="orderRemove text-line-blue">取消，重新選擇</div>
+        <div class="orderRemove text-line-blue" @click="share.paying = true, share.paying_popup = true">取消，重新選擇</div>
     </div>
 </div>
             </div>
