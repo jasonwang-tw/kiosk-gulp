@@ -29,7 +29,7 @@ engine: ejs
                     </div>
                     <div class="flex-space-between">
                         <div class="drinkRating"><i class="el-icon-star-on">4.7</i></div>
-                        <div class="drinkSell"><span class="type">已售出</span>887</div>
+                        <div class="drinkSell"><span class="type">熱銷中</span></div>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@ engine: ejs
                     </div>
                     <div class="flex-space-between">
                         <div class="drinkRating"><i class="el-icon-star-on">4.7</i></div>
-                        <div class="drinkSell"><span class="type">已售出</span>8k</div>
+                        <div class="drinkSell"><span class="type">已完售</span></div>
                     </div>
                 </div>
             </div>
@@ -65,14 +65,14 @@ engine: ejs
                     </div>
                     <div class="flex-space-between">
                         <div class="drinkRating"><i class="el-icon-star-on"></i>4.7</div>
-                        <div class="drinkSell"><span class="type">已售出</span>887</div>
+                        <div class="drinkSell"><span class="type">預定中</span></div>
                     </div>
                 </div>
             </div>
         </el-col>
-        <el-col :span="24">
-            <p><i class="el-icon-loading mr-2"></i>讀取中...</p>
-            <p>没有更多了</p>
+        <el-col :span="24" class="flex-space-between mt-5">
+            <div><a href="#"><i class="el-icon-arrow-left mr-2"></i>上一頁</a></div>
+            <div><a href="#">下一頁<i class="el-icon-arrow-right ml-2"></i></a></div>
         </el-col>
     </el-row>
 </div>
